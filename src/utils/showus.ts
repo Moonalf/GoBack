@@ -4261,7 +4261,7 @@ const showus = [
             },
             {
               name: '王涵',
-              avatar: 'members/2025-2026/wangh1.webp',
+              avatar: 'members/2025-2026/wangh2.webp',
               word: '行了你别说他了，他现在正在发情期，就跟图拉在非洲草原一样。',
               character: '牙刷',
               side: 'right',
