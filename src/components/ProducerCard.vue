@@ -71,6 +71,7 @@ const props = defineProps<{
     left: -10%;
     width: 120%;
     opacity: 0;
+    z-index: 1;
 
     .carrot_up {
       width: 2vh;

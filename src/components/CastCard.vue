@@ -5,7 +5,11 @@
       alt=""
     />
     <div :class="'name_wrap ' + cast.side">
-      <div class="cast_info">{{ cast.name + '  饰  ' + cast.character }}</div>
+      <div class="cast_info">
+        {{ cast.name }}
+        <span>饰</span>
+        {{ cast.character }}
+      </div>
     </div>
     <div class="word_wrap" v-if="cast.word">
       <div class="cast_word">{{ cast.word }}</div>
@@ -46,6 +50,11 @@ const props = defineProps<{
       writing-mode: vertical-lr;
       font-size: 1.2vh;
       color: wheat;
+
+      span {
+        font-size: 1vh;
+        margin: 0.5vh;
+      }
     }
 
     &.left {
@@ -66,6 +75,7 @@ const props = defineProps<{
     left: -10%;
     width: 120%;
     opacity: 0;
+    z-index: 1;
 
     .cast_word {
       box-sizing: border-box;
