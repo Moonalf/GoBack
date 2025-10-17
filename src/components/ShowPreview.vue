@@ -1,7 +1,7 @@
 <template>
   <div class="show_preview">
     <div class="close_wrap" @click="closeShowPreview">
-      <div class="close_btn"></div>
+      <div class="close_btn">← Go back</div>
     </div>
     <div class="intro_bg">
       <img :src="prefix + (show?.introbg ?? '')" alt="" />
@@ -127,35 +127,21 @@ watch(
     flex-shrink: 0;
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
-    position: sticky;
-    top: 3vh;
-    width: 3vh;
-    height: 3vh;
-    margin-left: min(80vw, 40vh);
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 6vh;
+    left: 0;
+    width: 12vh;
+    height: 6vh;
+    border-radius: 0 3vh 3vh 0;
+    background-color: rgba(255, 255, 255, 0.5);
     z-index: 99;
+
     .close_btn {
-      width: 3vh;
-      height: 3vh;
-      background-color: gray;
-      clip-path: polygon(
-        0 0,
-        10% 0,
-        50% 40%,
-        90% 0,
-        100% 0,
-        100% 10%,
-        60% 50%,
-        100% 90%,
-        100% 100%,
-        90% 100%,
-        50% 60%,
-        10% 100%,
-        0 100%,
-        0 90%,
-        40% 50%,
-        0 10%
-      );
+      color: #fff;
+      font-size: 2vh;
+      font-weight: bold;
     }
   }
 
