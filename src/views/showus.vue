@@ -1,6 +1,6 @@
 <template>
   <div class="showus">
-    <LoadingLayer id="loadingLayer"></LoadingLayer>
+    <!-- <LoadingLayer id="loadingLayer"></LoadingLayer> -->
     <div
       class="showus_block"
       v-for="(showusPerYear, idx) in showus"
@@ -112,14 +112,14 @@ onMounted(() => {
 
     .year_wrap {
       position: relative;
-      width: 100%;
+      width: 90%;
       margin: 3vh 0;
       border-top: white 0.2vh solid;
       .year {
         position: absolute;
         top: -1.25vh;
         left: 50%;
-        width: 15vh;
+        padding: 0 1vh;
         background-color: white;
         font-size: 2vh;
         line-height: 2.5vh;

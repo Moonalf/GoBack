@@ -23,7 +23,7 @@ onMounted(() => {
   setTimeout(() => {
     const loadingLayer = document.getElementById('loadingLayer')
     loadingLayer?.classList.add('fade')
-  }, 2000)
+  }, 1500)
 })
 </script>
 

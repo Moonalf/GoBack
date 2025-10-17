@@ -1,6 +1,6 @@
 <template>
   <div class="echo">
-    <LoadingLayer id="loadingLayer"></LoadingLayer>
+    <!-- <LoadingLayer id="loadingLayer"></LoadingLayer> -->
     <div class="echo_left">
       <EchoCard
         v-for="(echo, index) in echosGroup[0]"

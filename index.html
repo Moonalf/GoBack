@@ -5,6 +5,43 @@
     <link rel="icon" href="/common/goback_icon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>In a moment we go back.</title>
+    <script type="text/javascript" charset="UTF-8">
+      ;(function () {
+        function setRem() {
+          const html = document.documentElement
+          let width = html.clientWidth
+          if (width > 450) width = 450 // 最大宽度限制
+          html.style.fontSize = (width / 375) * 50 + 'px'
+        }
+        setRem()
+        window.addEventListener('resize', setRem)
+        window.addEventListener('pageshow', function (e) {
+          if (e && e.persisted) {
+            setRem()
+          }
+        })
+        try {
+          if (typeof WeixinJSBridge == 'object' && typeof WeixinJSBridge.invoke == 'function') {
+            handleFontSize()
+          } else {
+            if (document.addEventListener) {
+              document.addEventListener('WeixinJSBridgeReady', handleFontSize, false)
+            } else if (document.attachEvent) {
+              document.attachEvent('WeixinJSBridgeReady', handleFontSize)
+              document.attachEvent('onWeixinJSBridgeReady', handleFontSize)
+            }
+          }
+          function handleFontSize() {
+            // 设置网页字体为默认大小
+            WeixinJSBridge.invoke('setFontSizeCallback', { fontSize: 0 })
+            // 重写设置网页字体大小的事件
+            WeixinJSBridge.on('menu:setfont', function () {
+              WeixinJSBridge.invoke('setFontSizeCallback', { fontSize: 0 })
+            })
+          }
+        } catch (e) {}
+      })()
+    </script>
   </head>
   <body>
     <div id="app"></div>

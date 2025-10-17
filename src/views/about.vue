@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <LoadingLayer id="loadingLayer"></LoadingLayer>
+    <!-- <LoadingLayer id="loadingLayer"></LoadingLayer> -->
     <TeacherArea></TeacherArea>
     <div class="title">“爱的回归线”</div>
     <HistoryLine></HistoryLine>
