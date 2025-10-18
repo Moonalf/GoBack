@@ -7,6 +7,7 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 // https://vite.dev/config/
 export default defineConfig(() => {
   const isNetlify = process.env.NETLIFY === 'true'
+  const isEdgeOne = process.env.EDGEONE == 'true'
   return {
     plugins: [vue(), vueDevTools()],
     resolve: {
@@ -14,6 +15,6 @@ export default defineConfig(() => {
         '@': fileURLToPath(new URL('./src', import.meta.url)),
       },
     },
-    base: isNetlify ? '/' : process.env.NODE_ENV === 'production' ? '/GoBack/' : '/',
+    base: isNetlify || isEdgeOne ? '/' : process.env.NODE_ENV === 'production' ? '/GoBack/' : '/',
   }
 })
