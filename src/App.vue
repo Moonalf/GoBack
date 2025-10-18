@@ -27,7 +27,7 @@ html {
     height: 100vh;
     margin: 0;
     padding: 0;
-    background-color: wheat;
+    background-color: #000;
     #app {
       display: flex;
       flex-direction: row;
@@ -36,6 +36,8 @@ html {
       height: 100vh;
       margin: 0;
       padding: 0;
+      background-color: wheat;
+
       .container {
         width: min(100vw, 50vh);
         height: 100vh;
