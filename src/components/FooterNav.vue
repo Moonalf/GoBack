@@ -93,7 +93,7 @@ watch(
     height: 100%;
     color: rgba(0, 83, 117, 1);
     font-size: 2vh;
-    font-weight: 600;
+    font-weight: bold;
     transition: all 0.2s ease-in-out;
     .nav_icon {
       height: 50%;

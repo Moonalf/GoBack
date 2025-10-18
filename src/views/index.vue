@@ -12,12 +12,16 @@
       <div class="home_text">Wechat: Ma_Mei11eure_Ennemie</div>
       <div class="home_text">Email: 916824242@qq.com</div>
     </div>
+    <div class="title">“爱的回归线”</div>
+    <HistoryLine></HistoryLine>
+    <div class="footer_box"></div>
   </div>
 </template>
 
 <script lang="ts" setup>
 import Banner from '@/components/Banner.vue'
 import LoadingLayer from '@/components/LoadingLayer.vue'
+import HistoryLine from '@/components/HistoryLine.vue'
 import { onMounted } from 'vue'
 onMounted(() => {
   setTimeout(() => {
@@ -37,11 +41,24 @@ onMounted(() => {
     width: 95%;
     margin: 2vh auto;
     .home_text {
-      font-size: 2vh;
+      font-size: 1.8vh;
       color: black;
       text-align: justify;
       text-indent: 3vh;
     }
+  }
+  .title {
+    width: 100%;
+    margin: 2vh 0;
+    font-size: 2vh;
+    color: rgba(0, 83, 117, 1);
+    font-weight: bold;
+    font-style: italic;
+    text-align: center;
+  }
+  .footer_box {
+    flex-shrink: 0;
+    height: 10vh;
   }
 }
 </style>

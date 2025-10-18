@@ -41,7 +41,7 @@ import { getYear } from '@/utils/methods'
     align-items: center;
     width: 100%;
     background-color: rgba(0, 83, 117, 1);
-    font-weight: 600;
+    font-weight: bold;
     font-size: 2vh;
     text-indent: 0.5vh;
   }

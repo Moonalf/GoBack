@@ -1,7 +1,7 @@
 <template>
   <div class="echo_preview">
     <div class="close_wrap" @click="closeEchoPreview">
-      <div class="close_btn"></div>
+      <div class="close_btn">← Go back</div>
     </div>
     <div class="echo_info">
       <img :src="prefix + (echo?.avatar ?? '')" alt="" />
@@ -53,32 +53,23 @@ const closeEchoPreview = () => {
 
   .close_wrap {
     flex-shrink: 0;
-    position: sticky;
-    top: 3vh;
-    width: 3vh;
-    height: 3vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 6vh;
+    left: 0;
+    width: 12vh;
+    height: 6vh;
+    border-radius: 0 3vh 3vh 0;
+    background-color: rgba(255, 255, 255, 0.5);
+    z-index: 99;
+
     .close_btn {
-      width: 100%;
-      height: 100%;
-      background-color: gray;
-      clip-path: polygon(
-        0 0,
-        10% 0,
-        50% 40%,
-        90% 0,
-        100% 0,
-        100% 10%,
-        60% 50%,
-        100% 90%,
-        100% 100%,
-        90% 100%,
-        50% 60%,
-        10% 100%,
-        0 100%,
-        0 90%,
-        40% 50%,
-        0 10%
-      );
+      color: #fff;
+      font-size: 2vh;
+      font-weight: bold;
     }
   }
 
@@ -107,7 +98,7 @@ const closeEchoPreview = () => {
     width: 100%;
     margin: 1vh 0;
     font-size: 2vh;
-    font-weight: 600;
+    font-weight: bold;
   }
   .echo_content {
     width: 100%;

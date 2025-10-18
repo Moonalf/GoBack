@@ -64,7 +64,7 @@ onMounted(() => {
 
   .teacher_title {
     font-size: 2vh;
-    font-weight: 600;
+    font-weight: bold;
   }
 
   .avatar_area {
@@ -118,7 +118,7 @@ onMounted(() => {
       transition: all 0.5s ease-in-out;
       .teacher_name {
         font-size: 2vh;
-        font-weight: 600;
+        font-weight: bold;
       }
       .teacher_description {
         height: 14vh;

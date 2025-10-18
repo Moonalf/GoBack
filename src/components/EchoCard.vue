@@ -45,7 +45,7 @@ const showEchoPreview = () => {
     width: 100%;
     color: black;
     font-size: 1.5vh;
-    font-weight: 600;
+    font-weight: bold;
     text-indent: 1vh;
   }
   .echo_info {

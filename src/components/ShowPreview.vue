@@ -179,7 +179,7 @@ watch(
     width: 100%;
     margin-top: 7vh;
     font-size: 2.5vh;
-    font-weight: 600;
+    font-weight: bold;
     color: wheat;
     text-align: center;
   }
@@ -193,7 +193,7 @@ watch(
     font-size: 2vh;
     border-radius: 1vh;
     text-indent: 1vh;
-    font-weight: 600;
+    font-weight: bold;
   }
 
   .show_intro {
@@ -258,7 +258,7 @@ watch(
         margin-left: 2vh;
         font-size: 1.5vh;
         color: wheat;
-        font-weight: 600;
+        font-weight: bold;
         border-top: wheat 0.1rem solid;
       }
       .circle_icon {

@@ -58,7 +58,7 @@ const showShowPreview = () => {
     .show_title {
       margin-bottom: 1vh;
       font-size: 1.5vh;
-      font-weight: 600;
+      font-weight: bold;
       color: white;
     }
   }

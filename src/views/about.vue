@@ -2,8 +2,6 @@
   <div class="about">
     <!-- <LoadingLayer id="loadingLayer"></LoadingLayer> -->
     <TeacherArea></TeacherArea>
-    <div class="title">“爱的回归线”</div>
-    <HistoryLine></HistoryLine>
     <div class="title">历年选本</div>
     <ScriptTable></ScriptTable>
     <div class="footer_box"></div>
@@ -37,7 +35,7 @@ onMounted(() => {
     margin: 2vh 0;
     font-size: 2vh;
     color: rgba(0, 83, 117, 1);
-    font-weight: 600;
+    font-weight: bold;
     font-style: italic;
   }
   .footer_box {

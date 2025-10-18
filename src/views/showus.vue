@@ -127,7 +127,7 @@ onMounted(() => {
         border-radius: 1vh;
         text-align: center;
         font-style: italic;
-        font-weight: 600;
+        font-weight: bold;
         transform: translateX(-50%);
       }
     }

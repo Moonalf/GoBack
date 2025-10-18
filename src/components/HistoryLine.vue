@@ -36,7 +36,7 @@ import histories from '@/utils/histories'
       width: 100%;
       text-align: center;
       font-size: 2vh;
-      font-weight: 600;
+      font-weight: bold;
       .event_date {
         width: 40%;
       }
