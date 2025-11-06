@@ -30,6 +30,7 @@
     <ShowPreview
       v-for="(show, index) in showsFlatten"
       :id="'ShowPreview-' + index"
+      :key="'ShowPreviewKey-' + index"
       :show="show"
       @close-show-preview="closeShowPreview(index)"
     ></ShowPreview>
@@ -46,17 +47,16 @@ import ShowPreview from '@/components/ShowPreview.vue'
 
 import { ref } from 'vue'
 const showsFlatten = ref<Array<any>>([])
-const _lenX = showus.length
+let indexMap: any = {}
 
 /************************************************** lifecircles **************************************************/
-const onCreated = () => {
-  for (let idx = 0; idx < _lenX; idx++) {
-    for (let idy = 0; idy < showus[idx].shows.length; idy++) {
-      showsFlatten.value.push(showus[idx].shows[idy])
-    }
-  }
-}
+const onCreated = () => {}
 onCreated()
+import { onMounted } from 'vue'
+onMounted(() => {
+  flattenShowus()
+})
+
 import { onActivated } from 'vue'
 let interval: any = null
 // 由于使用了，页面切回来时只有onActivated有效。
@@ -79,10 +79,19 @@ onActivated(() => {
 })
 
 /************************************************** methods **************************************************/
+const flattenShowus = () => {
+  for (let idx = 0; idx < showus.length; idx++) {
+    for (let idy = 0; idy < showus[idx].shows.length; idy++) {
+      indexMap[`${idx}-${idy}`] = showsFlatten.value.length
+      showsFlatten.value.push(showus[idx].shows[idy])
+    }
+  }
+}
+
 const showShowPreview = (idx: number, idy: number) => {
   setTimeout(() => {
-    let _index = idx * _lenX + idy
-    const ShowPreview = document.getElementById('ShowPreview' + _index)
+    let _index = indexMap[`${idx}-${idy}`] ?? 0
+    const ShowPreview = document.getElementById('ShowPreview-' + _index)
     ShowPreview?.classList.add('show')
   }, 500)
 }
