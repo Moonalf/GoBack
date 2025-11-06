@@ -12,8 +12,7 @@
       <div class="home_text">Wechat: Ma_Mei11eure_Ennemie</div>
       <div class="home_text">Email: 916824242@qq.com</div>
     </div>
-    <div class="title">“爱的回归线”</div>
-    <HistoryLine></HistoryLine>
+
     <div class="footer_box"></div>
   </div>
 </template>

@@ -29,6 +29,7 @@
     </div>
     <ShowPreview
       id="ShowPreview"
+      v-if="showBool"
       :show="showPreview"
       @close-show-preview="closeShowPreview"
     ></ShowPreview>
@@ -42,18 +43,23 @@ import { getYear, getIdx } from '@/utils/methods'
 import ManagerArea from '@/components/ManagerArea.vue'
 import ShowCard from '@/components/ShowCard.vue'
 import ShowPreview from '@/components/ShowPreview.vue'
-import { ref } from 'vue'
+import { nextTick, ref } from 'vue'
 const showPreview = ref(showus[0].shows[0])
+const showBool = ref(false)
 const showShowPreview = (idx: number, idy: number) => {
   showPreview.value = showus[idx].shows[idy]
-  setTimeout(() => {
-    const ShowPreview = document.getElementById('ShowPreview')
-    ShowPreview?.classList.add('show')
-  }, 500)
+  showBool.value = true
+  nextTick(() => {
+    setTimeout(() => {
+      const ShowPreview = document.getElementById('ShowPreview')
+      ShowPreview?.classList.add('show')
+    }, 500)
+  })
 }
 const closeShowPreview = () => {
   const ShowPreview = document.getElementById('ShowPreview')
   ShowPreview?.classList.remove('show')
+  showBool.value = false
 }
 import { onActivated } from 'vue'
 let interval: any = null
