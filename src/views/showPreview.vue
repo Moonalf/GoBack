@@ -1,5 +1,5 @@
 <template>
-  <div class="show_preview">
+  <div class="show_preview" id="showPreview">
     <div class="close_wrap" @click="closeShowPreview">
       <div class="close_btn">← Go back</div>
     </div>
@@ -88,10 +88,13 @@ const onCreated = () => {
 onCreated()
 
 import { onMounted, onUnmounted } from 'vue'
-onMounted(() => {})
-onUnmounted(() => {
-  console.log('leave')
+onMounted(() => {
+  //   const showPreview = document.getElementById('showPreview')
+  //   if (showPreview) {
+  //     showPreview.classList.add('show')
+  //   }
 })
+onUnmounted(() => {})
 
 const closeShowPreview = () => {
   router.go(-1)
@@ -116,8 +119,13 @@ const linkVideo = (url: string) => {
   z-index: 20;
   overflow-y: scroll;
   overflow-x: hidden;
-  transition: all 0.5s ease-in-out;
+  transition: opacity 5s ease-in-out;
   color: white;
+  //   opacity: 0;
+
+  //   &.show {
+  //     opacity: 1;
+  //   }
 
   .close_wrap {
     flex-shrink: 0;
