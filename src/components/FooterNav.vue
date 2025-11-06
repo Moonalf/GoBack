@@ -83,6 +83,8 @@ watch(
   width: min(100vw, 50vh);
   height: 6vh;
   background-color: rgba(240, 255, 255, 1);
+  z-index: 5;
+
   .nav_item {
     flex: 1;
     display: flex;

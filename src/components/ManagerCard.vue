@@ -26,6 +26,7 @@ const props = defineProps<{
 <style lang="less" scoped>
 .manager_card {
   position: relative;
+  z-index: 1;
 
   &:hover {
     .word_wrap {
@@ -39,8 +40,8 @@ const props = defineProps<{
     height: 106%;
     top: -3%;
     left: -3%;
-    z-index: -1;
     border-radius: 50%;
+    z-index: -1;
     &.type0 {
       background: linear-gradient(135deg, gold 0, pink 70%);
     }
