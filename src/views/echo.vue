@@ -27,6 +27,10 @@
 import echos from '@/utils/echos'
 import EchoCard from '@/components/EchoCard.vue'
 import EchoPreview from '@/components/EchoPreview.vue'
+defineOptions({
+  name: 'echo',
+})
+
 const echosGroup: any = [[], []]
 import { ref } from 'vue'
 const echoPreview = ref({})

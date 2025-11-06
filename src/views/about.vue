@@ -14,7 +14,9 @@
 import HistoryLine from '@/components/HistoryLine.vue'
 import ScriptTable from '@/components/ScriptTable.vue'
 import TeacherArea from '@/components/TeacherArea.vue'
-import LoadingLayer from '@/components/LoadingLayer.vue'
+defineOptions({
+  name: 'about',
+})
 import { onMounted } from 'vue'
 onMounted(() => {
   setTimeout(() => {

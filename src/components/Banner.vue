@@ -35,6 +35,7 @@ import { onMounted, onUnmounted, onActivated, onDeactivated } from 'vue'
 let interval: any = null
 let index = 0
 onActivated(() => {
+  console.log('播放banner')
   const bannerItem = document.getElementById('banner_' + index)
   bannerItem?.classList.remove('ready')
   bannerItem?.classList.add('appear')
@@ -56,6 +57,7 @@ onActivated(() => {
 })
 
 onDeactivated(() => {
+  console.log('暂停播放banner')
   clearInterval(interval)
 })
 </script>

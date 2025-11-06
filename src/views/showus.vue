@@ -1,5 +1,5 @@
 <template>
-  <div class="showus">
+  <div class="showus" ref="showusBox">
     <!-- <LoadingLayer id="loadingLayer"></LoadingLayer> -->
     <div
       class="showus_block"
@@ -19,7 +19,7 @@
           v-for="(show, idy) in showusPerYear.shows"
           :key="'show-' + idy"
           :show="show"
-          @show-show-preview="showShowPreview(idx, idy)"
+          @show-show-preview="openShowPreview(idx, idy)"
         ></ShowCard>
       </div>
       <div class="show_card_list film empty" v-else>
@@ -27,13 +27,6 @@
         <div>In a moment we go back.</div>
       </div>
     </div>
-    <ShowPreview
-      v-for="(show, index) in showsFlatten"
-      :id="'ShowPreview-' + index"
-      :key="'ShowPreviewKey-' + index"
-      :show="show"
-      @close-show-preview="closeShowPreview(index)"
-    ></ShowPreview>
     <div class="footer_box"></div>
   </div>
 </template>
@@ -43,61 +36,51 @@ import showus from '@/utils/showus'
 import { getYear, getIdx } from '@/utils/methods'
 import ManagerArea from '@/components/ManagerArea.vue'
 import ShowCard from '@/components/ShowCard.vue'
-import ShowPreview from '@/components/ShowPreview.vue'
 
-import { ref } from 'vue'
-const showsFlatten = ref<Array<any>>([])
-let indexMap: any = {}
+defineOptions({
+  name: 'showus',
+})
+
+import { ref, nextTick, onUnmounted } from 'vue'
+const showusBox = ref<HTMLElement | any>(null)
+const scrollTop = ref(0)
+
+import { useRouter } from 'vue-router'
+const router = useRouter()
+let interval: any = null
+declare const window: any
 
 /************************************************** lifecircles **************************************************/
 const onCreated = () => {}
 onCreated()
 import { onMounted } from 'vue'
-onMounted(() => {
-  flattenShowus()
-})
 
-import { onActivated } from 'vue'
-let interval: any = null
-// 由于使用了，页面切回来时只有onActivated有效。
+onMounted(() => {})
+
+import { onActivated, onDeactivated } from 'vue'
 onActivated(() => {
-  for (let i = 0; i < showus.length; i++) {
-    const el = document.getElementById('Showus' + i)
-    el?.classList.remove('show')
-  }
-  if (interval) clearInterval(interval)
-  let count = 0
-  interval = setInterval(() => {
-    if (count < showus.length) {
-      const el = document.getElementById('Showus' + count)
-      el?.classList.add('show')
-      count += 1
-    } else {
-      clearInterval(interval)
-    }
-  }, 500)
+  showusBox.value.scrollTop = scrollTop.value
+  showusBox.value.addEventListener('scroll', handleScroll)
 })
+onDeactivated(() => {
+  showusBox.value.removeEventListener('scroll', handleScroll)
+})
+onUnmounted(() => {})
 
 /************************************************** methods **************************************************/
-const flattenShowus = () => {
-  for (let idx = 0; idx < showus.length; idx++) {
-    for (let idy = 0; idy < showus[idx].shows.length; idy++) {
-      indexMap[`${idx}-${idy}`] = showsFlatten.value.length
-      showsFlatten.value.push(showus[idx].shows[idy])
-    }
-  }
+
+const openShowPreview = (idx: number, idy: number) => {
+  router.push({
+    name: 'showPreview',
+    query: {
+      idx,
+      idy,
+    },
+  })
 }
 
-const showShowPreview = (idx: number, idy: number) => {
-  setTimeout(() => {
-    let _index = indexMap[`${idx}-${idy}`] ?? 0
-    const ShowPreview = document.getElementById('ShowPreview-' + _index)
-    ShowPreview?.classList.add('show')
-  }, 500)
-}
-const closeShowPreview = (index: number) => {
-  const ShowPreview = document.getElementById('ShowPreview-' + index)
-  ShowPreview?.classList.remove('show')
+const handleScroll = () => {
+  scrollTop.value = showusBox.value.scrollTop
 }
 </script>
 
@@ -117,14 +100,6 @@ const closeShowPreview = (index: number) => {
     align-items: center;
     width: 100%;
     margin-bottom: 2vh;
-    opacity: 0;
-    transform: translateY(5vh);
-    transition: all 0.5s ease-in-out;
-
-    &.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
 
     .year_wrap {
       position: relative;

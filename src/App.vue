@@ -3,8 +3,8 @@
     <HeaderBar></HeaderBar>
     <!-- <RouterView /> -->
     <router-view v-slot="{ Component, route }">
-      <keep-alive>
-        <component :is="Component" :key="route.fullPath" />
+      <keep-alive :include="['home', 'about', 'showus', 'echo']">
+        <component :is="Component" :key="route.name" />
       </keep-alive>
     </router-view>
     <FooterNav></FooterNav>

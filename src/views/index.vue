@@ -19,8 +19,10 @@
 <script lang="ts" setup>
 import Banner from '@/components/Banner.vue'
 import LoadingLayer from '@/components/LoadingLayer.vue'
-import HistoryLine from '@/components/HistoryLine.vue'
 import { onMounted } from 'vue'
+defineOptions({
+  name: 'home',
+})
 onMounted(() => {
   setTimeout(() => {
     const loadingLayer = document.getElementById('loadingLayer')
