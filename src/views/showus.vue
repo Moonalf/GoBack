@@ -28,10 +28,10 @@
       </div>
     </div>
     <ShowPreview
-      id="ShowPreview"
-      v-if="showBool"
-      :show="showPreview"
-      @close-show-preview="closeShowPreview"
+      v-for="(show, index) in showsFlatten"
+      :id="'ShowPreview-' + index"
+      :show="show"
+      @close-show-preview="closeShowPreview(index)"
     ></ShowPreview>
     <div class="footer_box"></div>
   </div>
@@ -43,24 +43,20 @@ import { getYear, getIdx } from '@/utils/methods'
 import ManagerArea from '@/components/ManagerArea.vue'
 import ShowCard from '@/components/ShowCard.vue'
 import ShowPreview from '@/components/ShowPreview.vue'
-import { nextTick, ref } from 'vue'
-const showPreview = ref(showus[0].shows[0])
-const showBool = ref(false)
-const showShowPreview = (idx: number, idy: number) => {
-  showPreview.value = showus[idx].shows[idy]
-  showBool.value = true
-  nextTick(() => {
-    setTimeout(() => {
-      const ShowPreview = document.getElementById('ShowPreview')
-      ShowPreview?.classList.add('show')
-    }, 500)
-  })
+
+import { ref } from 'vue'
+const showsFlatten = ref<Array<any>>([])
+const _lenX = showus.length
+
+/************************************************** lifecircles **************************************************/
+const onCreated = () => {
+  for (let idx = 0; idx < _lenX; idx++) {
+    for (let idy = 0; idy < showus[idx].shows.length; idy++) {
+      showsFlatten.value.push(showus[idx].shows[idy])
+    }
+  }
 }
-const closeShowPreview = () => {
-  const ShowPreview = document.getElementById('ShowPreview')
-  ShowPreview?.classList.remove('show')
-  showBool.value = false
-}
+onCreated()
 import { onActivated } from 'vue'
 let interval: any = null
 // 由于使用了，页面切回来时只有onActivated有效。
@@ -81,14 +77,19 @@ onActivated(() => {
     }
   }, 500)
 })
-import LoadingLayer from '@/components/LoadingLayer.vue'
-import { onMounted } from 'vue'
-onMounted(() => {
+
+/************************************************** methods **************************************************/
+const showShowPreview = (idx: number, idy: number) => {
   setTimeout(() => {
-    const loadingLayer = document.getElementById('loadingLayer')
-    loadingLayer?.classList.add('fade')
-  }, 2000)
-})
+    let _index = idx * _lenX + idy
+    const ShowPreview = document.getElementById('ShowPreview' + _index)
+    ShowPreview?.classList.add('show')
+  }, 500)
+}
+const closeShowPreview = (index: number) => {
+  const ShowPreview = document.getElementById('ShowPreview-' + index)
+  ShowPreview?.classList.remove('show')
+}
 </script>
 
 <style lang="less" scoped>
