@@ -192,7 +192,7 @@ const scripts = [
     },
     {
       name: '打开打不开的窗',
-      from: '乌镇青赛2023入围作品',
+      from: '乌镇青赛2023作品',
       type: '先锋话剧',
       duration: '30',
     },
@@ -216,7 +216,7 @@ const scripts = [
     },
     {
       name: '小小世界的不速之客',
-      from: '乌镇青赛2023入围作品',
+      from: '乌镇青赛2023作品',
       type: '先锋话剧',
       duration: '30',
     },
@@ -224,7 +224,7 @@ const scripts = [
   [
     {
       name: '八十一难',
-      from: '喜人奇妙夜作品',
+      from: '喜人奇妙夜第1季作品',
       type: '情景喜剧',
       duration: '15',
     },
@@ -236,7 +236,7 @@ const scripts = [
     },
     {
       name: '心动的信号',
-      from: '喜人奇妙夜作品',
+      from: '喜人奇妙夜第1季作品',
       type: '情景喜剧',
       duration: '20',
     },
@@ -264,6 +264,38 @@ const scripts = [
       from: '廖一梅作品（节选）',
       type: '先锋|爱情',
       duration: '50',
+    },
+  ],
+  [
+    {
+      name: '越狱的夏天',
+      from: '喜人奇妙夜第1季作品',
+      type: '喜剧',
+      duration: '20',
+    },
+    {
+      name: '风声',
+      from: '★ 同名电影改编',
+      type: '革命|谍战',
+      duration: '30',
+    },
+    {
+      name: '爱情神话',
+      from: '★ 同名电影改编|邵艺辉作品',
+      type: '女性|爱情',
+      duration: '20',
+    },
+    {
+      name: '蚌与珍珠',
+      from: '乌镇青赛2023作品',
+      type: '先锋|女性',
+      duration: '30',
+    },
+    {
+      name: '油漆未干',
+      from: '勒内·福舒瓦作品',
+      type: '喜剧',
+      duration: '120',
     },
   ],
 ]

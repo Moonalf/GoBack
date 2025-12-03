@@ -115,6 +115,7 @@ const linkVideo = (url: string) => {
   width: min(100vw, 50vh);
   height: 100vh;
   padding: 0 2vh;
+  padding-bottom: 10vh;
   background: linear-gradient(180deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.9));
   z-index: 20;
   overflow-y: scroll;
@@ -181,7 +182,7 @@ const linkVideo = (url: string) => {
 
   .show_title {
     width: 100%;
-    margin-top: 7vh;
+    margin-top: 15vh;
     font-size: 2.5vh;
     font-weight: bold;
     color: wheat;
@@ -263,7 +264,7 @@ const linkVideo = (url: string) => {
         font-size: 1.5vh;
         color: wheat;
         font-weight: bold;
-        border-top: wheat 0.1rem solid;
+        border-top: wheat 0.2vh solid;
       }
       .circle_icon {
         position: absolute;
