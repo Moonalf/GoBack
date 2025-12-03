@@ -7,10 +7,12 @@
         哈尔滨工业大学（深圳）学生艺术团话剧部（告白话剧社），于2015年9月成立。自成立以来，话剧部始终朝着先进艺术社团的方向探索前行，始终为丰富校园生活、发展戏剧文化不懈追求和努力着。
       </div>
       <div class="home_text">
-        本网站由第五届社长『月半衔蝉（十三太保）』维护，用于记录剧社的演出活动和历代成员，在收集信息的过程中难免有疏漏错误。如果有任何需要补充、修改或删除的信息，请联系：
+        本网站由第五届社长『月半衔蝉（十三太保）』维护，用于记录剧社的演出活动和历代成员，在收集信息的过程中难免有疏漏错误。如果有任何需要补充、修改或删除的信息，请联系：916824242@qq.com
       </div>
-      <div class="home_text">Wechat: Ma_Mei11eure_Ennemie</div>
-      <div class="home_text">Email: 916824242@qq.com</div>
+      <div class="home_text">
+        网站源码是开源的。必要的时候，或许会出现一个有缘人能接过维护网站的责任。开源地址：
+      </div>
+      <div class="home_text">https://github.com/Moonalf/GoBack</div>
     </div>
     <div class="footer_box"></div>
   </div>
