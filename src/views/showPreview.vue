@@ -80,7 +80,7 @@ const onCreated = () => {
   let _idx = parseInt(String(route.query.idx) ?? '0')
   let _idy = parseInt(String(route.query.idy) ?? '0')
   show.value = showus[_idx].shows[_idy]
-  producerGroup.value = devideArr(show.value.producers, 3)
+  producerGroup.value = devideArr(show.value.producers, 4)
   castGroups.value = show.value.casts.map((group: any, index: number) => {
     return devideArr(group, 3)
   })
@@ -239,13 +239,12 @@ const linkVideo = (url: string) => {
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    width: 42vh;
+    width: 100%;
     margin-bottom: 1vh;
 
     .producer_card {
-      width: 12vh;
-      height: 15vh;
-      margin-right: 2vh;
+      width: 23%;
+      margin: 0 1%;
     }
   }
 
