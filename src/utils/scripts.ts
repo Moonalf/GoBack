@@ -283,7 +283,7 @@ const scripts = [
       name: '爱情神话',
       from: '★ 同名电影改编|邵艺辉作品',
       type: '女性|爱情',
-      duration: '20',
+      duration: '25',
     },
     {
       name: '蚌与珍珠',
