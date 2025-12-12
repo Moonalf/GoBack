@@ -4484,7 +4484,7 @@ const showus = [
           },
           {
             name: '破影大王',
-            avatar: '',
+            avatar: 'members/2025-2026/yusy.webp',
             word: '',
             character: '中控',
           },
