@@ -15,7 +15,6 @@ const prefix = import.meta.env.BASE_URL
 const props = defineProps<{
   echo: any
 }>()
-import { defineEmits } from 'vue'
 const emit = defineEmits(['showEchoPreview'])
 const showEchoPreview = () => {
   emit('showEchoPreview')
@@ -28,7 +27,7 @@ const showEchoPreview = () => {
   flex-direction: column;
   align-items: center;
   width: 90%;
-  margin: auto;
+  margin: 2vh auto;
   border-radius: 1vh;
   background-color: rgba(255, 255, 255, 0.3);
   overflow: hidden;
@@ -57,8 +56,8 @@ const showEchoPreview = () => {
     width: 100%;
     padding-left: 1vh;
     padding-bottom: 0.5vh;
-    color: gray;
-    font-size: 1.2vh;
+    color: #666;
+    font-size: 1.3vh;
     img {
       width: 3vh;
       height: 3vh;

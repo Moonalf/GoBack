@@ -20,7 +20,7 @@ const prefix = import.meta.env.BASE_URL
 const props = defineProps<{
   echo: any
 }>()
-import { defineEmits } from 'vue'
+
 const emit = defineEmits(['closeEchoPreview'])
 const closeEchoPreview = () => {
   emit('closeEchoPreview')
@@ -37,7 +37,8 @@ const closeEchoPreview = () => {
   top: 0;
   width: min(100vw, 50vh);
   height: 100vh;
-  padding: 0 2vh;
+  padding: 2vh;
+  padding-bottom: 12vh;
   background: linear-gradient(180deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.9));
   opacity: 0;
   z-index: -1;

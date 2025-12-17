@@ -12,7 +12,7 @@ const prefix = import.meta.env.BASE_URL
 const props = defineProps<{
   show: any
 }>()
-import { defineEmits } from 'vue'
+
 const emit = defineEmits(['showShowPreview'])
 const showShowPreview = () => {
   emit('showShowPreview')
