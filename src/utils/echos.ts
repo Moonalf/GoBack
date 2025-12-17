@@ -35,7 +35,7 @@ export default [
     author: '杰哥',
     avatar: 'members/2025-2026/wanghj.webp',
     modified: '2025.12.16',
-    title: '关于油漆未干',
+    title: '关于《油漆未干》',
     cover: 'echos/whjblogyqwg.webp',
     contents: [
       '油漆未干这部剧是一部纯粹的话剧，它和我们平时能接触到的艺术形式，包括我们短剧专场的剧目，都不太一样，它有着话剧鲜明的特色。',

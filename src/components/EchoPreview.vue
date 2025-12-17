@@ -105,6 +105,7 @@ const closeEchoPreview = () => {
     width: 100%;
     font-size: 1.5vh;
     text-align: justify;
+    text-indent: 3vh;
   }
   .echo_tag {
     width: 100%;
