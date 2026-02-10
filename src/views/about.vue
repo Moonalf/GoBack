@@ -2,8 +2,9 @@
   <div class="about">
     <!-- <LoadingLayer id="loadingLayer"></LoadingLayer> -->
     <TeacherArea></TeacherArea>
-    <div class="title">“爱的回归线”</div>
-    <HistoryLine></HistoryLine>
+    <!-- <div class="title">“爱的回归线”</div>
+    <HistoryLine></HistoryLine> -->
+    <ScriptArea></ScriptArea>
     <div class="title">历年选本</div>
     <ScriptTable></ScriptTable>
     <div class="footer_box"></div>
@@ -14,6 +15,7 @@
 import HistoryLine from '@/components/HistoryLine.vue'
 import ScriptTable from '@/components/ScriptTable.vue'
 import TeacherArea from '@/components/TeacherArea.vue'
+import ScriptArea from '@/components/ScriptArea.vue'
 defineOptions({
   name: 'about',
 })

@@ -14,6 +14,8 @@
       </div>
       <div class="home_text">https://github.com/Moonalf/GoBack</div>
     </div>
+    <div class="title">“爱的回归线”</div>
+    <HistoryLine></HistoryLine>
     <div class="footer_box"></div>
   </div>
 </template>
@@ -21,6 +23,7 @@
 <script lang="ts" setup>
 import Banner from '@/components/Banner.vue'
 import LoadingLayer from '@/components/LoadingLayer.vue'
+import HistoryLine from '@/components/HistoryLine.vue'
 import { onMounted } from 'vue'
 defineOptions({
   name: 'home',
@@ -52,6 +55,7 @@ onMounted(() => {
   .title {
     width: 100%;
     margin: 2vh 0;
+    margin-top: 6vh;
     font-size: 2vh;
     color: rgba(0, 83, 117, 1);
     font-weight: bold;
