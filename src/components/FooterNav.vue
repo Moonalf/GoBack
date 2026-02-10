@@ -84,6 +84,7 @@ watch(
   height: 6vh;
   background-color: rgba(240, 255, 255, 1);
   z-index: 5;
+  overflow: hidden;
 
   .nav_item {
     flex: 1;

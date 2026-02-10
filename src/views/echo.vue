@@ -37,7 +37,7 @@ const echoPreview = ref({})
 echos.forEach((echo: any, index: number) => {
   echosGroup[index % 2].push(echo)
 })
-const showEchoPreview = (index: any) => {
+const showEchoPreview = (index: number) => {
   echoPreview.value = echos[index]
   setTimeout(() => {
     const EchoPreview = document.getElementById('EchoPreview')
