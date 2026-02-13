@@ -77,10 +77,10 @@ const props = defineProps<{
     overflow: hidden;
 
     .manager_name {
-      margin-bottom: 1vh;
-      font-size: 1.2vh;
+      margin-bottom: 0.1rem;
+      font-size: 0.16rem;
       font-weight: bold;
-      color: white;
+      color: #fff;
     }
   }
 
@@ -89,7 +89,7 @@ const props = defineProps<{
     flex-direction: column;
     align-items: flex-start;
     position: absolute;
-    bottom: 70%;
+    bottom: 92%;
     left: -10%;
     width: 120%;
     opacity: 0;
@@ -97,20 +97,20 @@ const props = defineProps<{
     .manager_word {
       box-sizing: border-box;
       width: 100%;
-      color: black;
-      background-color: white;
-      border-radius: 1vh;
-      font-size: 1.2vh;
-      padding: 0.5vh;
+      color: #fff;
+      background-color: #00000080;
+      border-radius: 0.1rem;
+      font-size: 0.16rem;
+      padding: 0.1rem;
       text-align: justify;
     }
     .carrot_up {
-      width: 2vh;
-      height: 1vh;
+      width: 0.2rem;
+      height: 0.1rem;
       margin-top: -1px;
-      margin-left: 2vh;
+      margin-left: 0.2rem;
       clip-path: polygon(0 0, 50% 100%, 100% 0);
-      background-color: white;
+      background-color: #00000080;
     }
   }
 }

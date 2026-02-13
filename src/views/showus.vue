@@ -94,19 +94,20 @@ const handleScroll = () => {
 
 <style lang="less" scoped>
 .showus {
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
   width: 100%;
-  height: 87vh;
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: hidden;
   z-index: 0;
 
   .showus_block_wrap {
     position: relative;
     width: 100%;
-    margin: 3vh 0;
+    margin: 0.4rem 0;
     z-index: 0;
 
     &:first-child {
@@ -115,7 +116,7 @@ const handleScroll = () => {
       }
     }
     &:last-child {
-      margin-bottom: 13vh;
+      margin-bottom: 1rem;
       .ring_back_wrap {
         display: none;
       }
@@ -123,52 +124,52 @@ const handleScroll = () => {
 
     &.left {
       .showus_block {
-        transform: rotate(-5deg) translateX(-0.5vh);
+        transform: rotate(-3deg) translateX(-0.1rem);
       }
       .ring_front_wrap {
-        right: 5vh;
+        right: 0.7rem;
       }
       .ring_back_wrap {
-        left: 5.5vh;
+        left: 0.7rem;
       }
     }
 
     &.right {
       .showus_block {
-        transform: rotate(5deg) translateX(0.5vh);
+        transform: rotate(3deg) translateX(0.1rem);
       }
       .ring_front_wrap {
-        left: 3vh;
+        left: 0.4rem;
       }
       .ring_back_wrap {
-        right: 2.5vh;
+        right: 0.4rem;
       }
     }
 
     .ring_front_wrap {
       box-sizing: border-box;
       position: absolute;
-      top: -7vh;
-      width: 2.5vh;
-      height: 8vh;
+      top: -0.9rem;
+      width: 0.3rem;
+      height: 1rem;
       overflow: hidden;
       z-index: 3;
 
       .ring_front {
         box-sizing: border-box;
-        width: 5vh;
-        height: 8vh;
+        width: 0.6rem;
+        height: 1rem;
         border-radius: 50%;
-        border: rgba(0, 83, 117, 1) 1vh solid;
+        border: rgba(0, 83, 117, 1) 0.15rem solid;
       }
     }
 
     .ring_back_wrap {
       box-sizing: border-box;
       position: absolute;
-      bottom: -7vh;
-      width: 2.5vh;
-      height: 8vh;
+      bottom: -0.9rem;
+      width: 0.3rem;
+      height: 1rem;
       overflow: hidden;
       z-index: -1;
 
@@ -177,10 +178,10 @@ const handleScroll = () => {
         position: absolute;
         top: 0;
         right: 0;
-        width: 5vh;
-        height: 8vh;
+        width: 0.6rem;
+        height: 1rem;
         border-radius: 50%;
-        border: rgba(0, 83, 117, 1) 1vh solid;
+        border: rgba(0, 83, 117, 1) 0.15rem solid;
       }
     }
 
@@ -192,28 +193,28 @@ const handleScroll = () => {
       position: relative;
       width: 100%;
       background-color: #ffffff80;
-      border-radius: 2vh;
-      border: #fff 0.5vh solid;
+      border-radius: 0.3rem;
+      border: #fff 0.05rem solid;
       z-index: 1;
 
       .year_wrap {
         position: relative;
         width: 90%;
-        margin-bottom: 3vh;
+        margin-bottom: 0.5rem;
 
         .year {
           position: absolute;
-          top: -1.25vh;
+          top: -0.25rem;
           left: 50%;
-          padding: 0 1vh;
+          padding: 0 0.2rem;
           background-color: white;
-          font-size: 2vh;
-          line-height: 2.5vh;
+          font-size: 0.3rem;
           color: rgba(0, 83, 117, 1);
-          border-radius: 1vh;
+          border-radius: 0.2rem;
           text-align: center;
           font-style: italic;
           font-weight: bold;
+          white-space: nowrap;
           transform: translateX(-50%);
         }
       }
@@ -224,9 +225,9 @@ const handleScroll = () => {
         align-items: center;
         justify-content: flex-start;
         width: 100%;
-        height: 24vh;
-        margin-top: 1vh;
-        margin-bottom: 3vh;
+        height: 3.6rem;
+        margin-top: 0.2rem;
+        margin-bottom: 0.5rem;
         background: linear-gradient(135deg, rgba(0, 83, 117, 1), wheat);
         overflow-y: hidden;
         overflow-x: scroll;
@@ -236,14 +237,14 @@ const handleScroll = () => {
           flex-direction: column;
           align-items: center;
           justify-content: center;
-          font-size: 3vh;
+          font-size: 0.4rem;
           font-weight: 900;
           font-style: italic;
         }
 
         .show_card {
-          width: 27vh;
-          height: 18vh;
+          width: 4.2rem;
+          height: 2.8rem;
         }
       }
 
@@ -555,11 +556,6 @@ const handleScroll = () => {
         );
       }
     }
-  }
-
-  .footer_box {
-    flex-shrink: 0;
-    height: 10vh;
   }
 }
 </style>

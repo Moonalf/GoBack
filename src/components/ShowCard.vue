@@ -23,13 +23,13 @@ const showShowPreview = () => {
 .show_card {
   flex-shrink: 0;
   position: relative;
-  margin: 0 1vh;
-  border-radius: 1vh;
+  margin: 0 0.15rem;
+  border-radius: 0.2rem;
   overflow: hidden;
   transition: all 0.3s ease-in-out;
 
   &:active {
-    transform: translateY(-2vh);
+    transform: translateY(-0.2rem);
   }
 
   img {
@@ -56,10 +56,14 @@ const showShowPreview = () => {
     );
 
     .show_title {
-      margin-bottom: 1vh;
-      font-size: 1.5vh;
+      max-width: 100%;
+      margin-bottom: 0.1rem;
+      font-size: 0.24rem;
       font-weight: bold;
       color: white;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
   }
 }

@@ -37,8 +37,8 @@ const closeEchoPreview = () => {
   top: 0;
   width: 7.5rem;
   height: 100vh;
-  padding: 2vh;
-  padding-bottom: 12vh;
+  padding: 0.25rem;
+  padding-bottom: 1.6rem;
   background: linear-gradient(180deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.9));
   opacity: 0;
   z-index: -1;
@@ -59,17 +59,17 @@ const closeEchoPreview = () => {
     justify-content: center;
     align-items: center;
     position: fixed;
-    bottom: 6vh;
+    bottom: 0.8rem;
     left: 0;
-    width: 12vh;
-    height: 6vh;
-    border-radius: 0 3vh 3vh 0;
+    width: 1.8rem;
+    height: 0.8rem;
+    border-radius: 0 0.4rem 0.4rem 0;
     background-color: rgba(255, 255, 255, 0.5);
     z-index: 99;
 
     .close_btn {
       color: #fff;
-      font-size: 2vh;
+      font-size: 0.3rem;
       font-weight: bold;
     }
   }
@@ -85,11 +85,11 @@ const closeEchoPreview = () => {
     justify-content: flex-start;
     align-items: center;
     width: 100%;
-    margin: 1vh 0;
-    font-size: 1.5vh;
+    margin: 0.2rem 0;
+    font-size: 0.24rem;
     img {
-      width: 3vh;
-      height: 3vh;
+      width: 0.5rem;
+      height: 0.5rem;
       object-fit: cover;
       border-radius: 50%;
     }
@@ -97,25 +97,26 @@ const closeEchoPreview = () => {
 
   .echo_title {
     width: 100%;
-    margin: 1vh 0;
-    font-size: 2vh;
+    margin: 0.2rem 0;
+    font-size: 0.3rem;
     font-weight: bold;
   }
   .echo_content {
     width: 100%;
-    font-size: 1.5vh;
+    font-size: 0.24rem;
     text-align: justify;
-    text-indent: 3vh;
+    text-indent: 0.4rem;
   }
   .echo_tag {
     width: 100%;
-    font-size: 1.5vh;
+    font-size: 0.2rem;
+    font-weight: bold;
     color: rgba(0, 83, 117, 1);
   }
   .echo_modified {
     width: 100%;
-    margin: 1vh 0;
-    font-size: 1.5vh;
+    margin: 0.2rem 0;
+    font-size: 0.2rem;
     color: gray;
   }
 }

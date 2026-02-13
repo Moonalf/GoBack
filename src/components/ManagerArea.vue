@@ -57,18 +57,18 @@ const props = defineProps<{
     flex-direction: row;
     align-items: center;
     .master {
-      width: min(30vw, 15vh);
-      height: min(30vw, 15vh);
+      width: 2rem;
+      height: 2rem;
     }
     .vice {
-      width: min(25vw, 12vh);
-      height: min(25vw, 12vh);
-      margin: 0 2vh;
+      width: 1.6rem;
+      height: 1.6rem;
+      margin: 0 0.5rem;
     }
     .placeholder {
-      width: min(25vw, 12vh);
-      height: min(25vw, 12vh);
-      margin: 0 2vh;
+      width: 1.6rem;
+      height: 1.6rem;
+      margin: 0 0.5rem;
     }
   }
 }

@@ -60,19 +60,20 @@ onMounted(() => {
 
 <style lang="less" scoped>
 .echo {
+  flex: 1;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
+  justify-content: center;
   width: 100%;
-  height: 87vh;
-  padding-top: 2vh;
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: hidden;
   .echo_left {
-    width: 50%;
+    width: 45%;
+    margin-right: 0.2rem;
   }
   .echo_right {
-    width: 50%;
+    width: 45%;
   }
 }
 </style>

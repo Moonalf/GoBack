@@ -27,6 +27,10 @@ const props = defineProps<{
 
 <style lang="less" scoped>
 .cast_card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   position: relative;
   &:hover {
     .word_wrap {
@@ -35,34 +39,33 @@ const props = defineProps<{
   }
 
   img {
-    width: 11vh;
-    height: 14vh;
-    margin: 0.5vh;
+    width: 1.95rem;
+    height: 2.6rem;
     object-fit: cover;
   }
   .name_wrap {
     position: absolute;
-    top: 1vh;
+    top: 0.2rem;
     background-color: rgba(0, 0, 0, 0.3);
-    border-right: wheat 0.2vh solid;
+    border-right: wheat 0.02rem solid;
 
     .cast_info {
       writing-mode: vertical-lr;
-      font-size: 1.2vh;
+      font-size: 0.18rem;
       color: wheat;
 
       span {
-        font-size: 1vh;
-        margin: 0.5vh;
+        font-size: 0.16rem;
+        margin: 0.1rem;
       }
     }
 
     &.left {
-      left: 1vh;
+      left: 0.1rem;
     }
 
     &.right {
-      right: 1vh;
+      right: 0.1rem;
     }
   }
 
@@ -71,9 +74,9 @@ const props = defineProps<{
     flex-direction: column;
     align-items: flex-start;
     position: absolute;
-    bottom: 70%;
-    left: -10%;
-    width: 120%;
+    bottom: 90%;
+    left: -5%;
+    width: 110%;
     opacity: 0;
     z-index: 1;
 
@@ -82,16 +85,16 @@ const props = defineProps<{
       width: 100%;
       color: black;
       background-color: white;
-      border-radius: 1vh;
-      font-size: 1.2vh;
-      padding: 0.5vh;
+      border-radius: 0.1rem;
+      font-size: 0.16rem;
+      padding: 0.1rem;
       text-align: justify;
     }
     .carrot_up {
-      width: 2vh;
-      height: 1vh;
+      width: 0.2rem;
+      height: 0.1rem;
       margin-top: -1px;
-      margin-left: 2vh;
+      margin-left: 0.2rem;
       clip-path: polygon(0 0, 50% 100%, 100% 0);
       background-color: white;
     }

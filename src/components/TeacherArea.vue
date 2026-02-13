@@ -80,7 +80,7 @@ onMounted(() => {
       width: 1.2rem;
       height: 1.6rem;
       margin-right: 0.1rem;
-      border-radius: 1vh;
+      border-radius: 0.15rem;
       border: gray 0.03rem solid;
       overflow: hidden;
       transform-origin: left bottom;

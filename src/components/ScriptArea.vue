@@ -186,7 +186,7 @@ const getPrevYearScripts = () => {
   flex-direction: column;
   align-items: center;
   width: 95%;
-  margin: 0.5rem 0;
+  margin: 0.3rem 0;
   padding: 0.2rem;
   background: linear-gradient(135deg, rgba(0, 83, 117, 1), wheat);
   border-radius: 0.2rem;

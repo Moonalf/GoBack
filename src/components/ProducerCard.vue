@@ -49,14 +49,14 @@ const props = defineProps<{
     background: linear-gradient(180deg, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 1) 100%);
 
     .producer_character {
-      font-size: 1.2vh;
+      font-size: 0.2rem;
       color: wheat;
-      border-bottom: wheat 0.1vh solid;
+      border-bottom: wheat 0.02rem solid;
     }
 
     .producer_name {
-      margin-bottom: 0.5vh;
-      font-size: 1vh;
+      margin-bottom: 0.1rem;
+      font-size: 0.16rem;
       color: wheat;
     }
   }
@@ -73,9 +73,9 @@ const props = defineProps<{
     z-index: 1;
 
     .carrot_up {
-      width: 2vh;
-      height: 1vh;
-      margin-left: 2vh;
+      width: 0.2rem;
+      height: 0.1rem;
+      margin-left: 0.2rem;
       clip-path: polygon(0 100%, 50% 0, 100% 100%);
       background-color: white;
     }
@@ -85,9 +85,9 @@ const props = defineProps<{
       margin-top: -1px;
       color: black;
       background-color: white;
-      border-radius: 1vh;
-      font-size: 1.2vh;
-      padding: 0.5vh;
+      border-radius: 0.1rem;
+      font-size: 0.16rem;
+      padding: 0.1rem;
       text-align: justify;
     }
   }

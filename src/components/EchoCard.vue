@@ -26,9 +26,9 @@ const showEchoPreview = () => {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 90%;
-  margin: 2vh auto;
-  border-radius: 1vh;
+  width: 100%;
+  margin: 0.2rem 0;
+  border-radius: 0.2rem;
   background-color: rgba(255, 255, 255, 0.3);
   overflow: hidden;
   transition: all 0.2s ease-in-out;
@@ -43,9 +43,12 @@ const showEchoPreview = () => {
   .echo_title {
     width: 100%;
     color: black;
-    font-size: 1.5vh;
+    font-size: 0.24rem;
     font-weight: bold;
-    text-indent: 1vh;
+    text-indent: 0.1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   .echo_info {
     display: flex;
@@ -54,19 +57,19 @@ const showEchoPreview = () => {
     justify-content: flex-start;
     position: relative;
     width: 100%;
-    padding-left: 1vh;
-    padding-bottom: 0.5vh;
+    padding-left: 0.1rem;
+    padding-bottom: 0.1rem;
     color: #666;
-    font-size: 1.3vh;
+    font-size: 0.2rem;
     img {
-      width: 3vh;
-      height: 3vh;
+      width: 0.5rem;
+      height: 0.5rem;
       object-fit: cover;
       border-radius: 50%;
     }
     .echo_modified {
       position: absolute;
-      right: 1vh;
+      right: 0.1rem;
     }
   }
 }

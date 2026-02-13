@@ -114,19 +114,14 @@ const linkVideo = (url: string) => {
   top: 0;
   width: 7.5rem;
   height: 100vh;
-  padding: 0 2vh;
-  padding-bottom: 10vh;
+  padding: 0 0.25rem;
+  padding-bottom: 1.6rem;
   background: linear-gradient(180deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.9));
   z-index: 20;
   overflow-y: scroll;
   overflow-x: hidden;
   transition: opacity 5s ease-in-out;
   color: white;
-  //   opacity: 0;
-
-  //   &.show {
-  //     opacity: 1;
-  //   }
 
   .close_wrap {
     flex-shrink: 0;
@@ -135,17 +130,17 @@ const linkVideo = (url: string) => {
     justify-content: center;
     align-items: center;
     position: fixed;
-    bottom: 6vh;
+    bottom: 0.8rem;
     left: 0;
-    width: 12vh;
-    height: 6vh;
-    border-radius: 0 3vh 3vh 0;
+    width: 1.8rem;
+    height: 0.8rem;
+    border-radius: 0 0.4rem 0.4rem 0;
     background-color: rgba(255, 255, 255, 0.5);
     z-index: 99;
 
     .close_btn {
       color: #fff;
-      font-size: 2vh;
+      font-size: 0.3rem;
       font-weight: bold;
     }
   }
@@ -157,8 +152,8 @@ const linkVideo = (url: string) => {
     top: 0;
     right: 0;
     width: 100%;
-    height: 20%;
-    padding: 1vh;
+    height: 3rem;
+    padding: 0 0.2rem;
     overflow: hidden;
     img {
       width: 100%;
@@ -182,8 +177,8 @@ const linkVideo = (url: string) => {
 
   .show_title {
     width: 100%;
-    margin-top: 15vh;
-    font-size: 2.5vh;
+    margin-top: 2rem;
+    font-size: 0.5rem;
     font-weight: bold;
     color: wheat;
     text-align: center;
@@ -191,21 +186,21 @@ const linkVideo = (url: string) => {
 
   .sub_title {
     width: 100%;
-    margin-top: 3vh;
-    margin-bottom: 1vh;
+    margin-top: 0.5rem;
+    margin-bottom: 0.2rem;
     background: linear-gradient(90deg, rgba(245, 222, 179, 1) 0, rgba(245, 222, 179, 0) 50%);
     color: black;
-    font-size: 2vh;
-    border-radius: 1vh;
-    text-indent: 1vh;
+    font-size: 0.3rem;
+    border-radius: 0.15rem;
+    text-indent: 0.1rem;
     font-weight: bold;
   }
 
   .show_intro {
     width: 100%;
-    font-size: 1.5vh;
+    font-size: 0.24rem;
     text-align: justify;
-    text-indent: 3vh;
+    text-indent: 0.4rem;
     color: wheat;
   }
 
@@ -214,13 +209,13 @@ const linkVideo = (url: string) => {
     flex-direction: row;
     align-items: center;
     width: 100%;
-    padding-left: 3vh;
-    font-size: 1.5vh;
+    padding-left: 0.4rem;
+    font-size: 0.24rem;
     color: wheat;
     .play_icon {
-      width: 2vh;
-      height: 2vh;
-      border: wheat 0.1vh solid;
+      width: 0.3rem;
+      height: 0.3rem;
+      border: wheat 0.01rem solid;
       div {
         width: 100%;
         height: 100%;
@@ -240,11 +235,12 @@ const linkVideo = (url: string) => {
     justify-content: flex-start;
     align-items: center;
     width: 100%;
-    margin-bottom: 1vh;
+    margin-bottom: 0.2rem;
 
     .producer_card {
-      width: 23%;
-      margin: 0 1%;
+      width: 1.6rem;
+      margin-left: 0.05rem;
+      margin-right: 0.1rem;
     }
   }
 
@@ -257,22 +253,22 @@ const linkVideo = (url: string) => {
     .cast_group_name {
       position: relative;
       width: 100%;
-      margin-top: 2vh;
+      margin-top: 0.2rem;
       .name {
-        margin-left: 2vh;
-        font-size: 1.5vh;
+        margin-left: 0.25rem;
+        font-size: 0.24rem;
         color: wheat;
         font-weight: bold;
-        border-top: wheat 0.2vh solid;
+        border-top: wheat 0.01rem solid;
       }
       .circle_icon {
         position: absolute;
-        top: -1vh;
+        top: -0.1rem;
         left: 0;
-        width: 2vh;
-        height: 2vh;
+        width: 0.25rem;
+        height: 0.25rem;
         border-radius: 50%;
-        border: wheat 0.2vh solid;
+        border: wheat 0.05rem solid;
       }
     }
 
@@ -281,20 +277,21 @@ const linkVideo = (url: string) => {
       flex-direction: row;
       justify-content: flex-start;
       align-items: center;
-      width: 42vh;
-      margin-bottom: 1vh;
+      width: 100%;
+      margin-bottom: 0.2rem;
 
       .cast_card {
-        width: 12vh;
-        height: 15vh;
-        margin: 0 1vh;
+        width: 2.1rem;
+        height: 2.8rem;
+        margin-left: 0.1rem;
+        margin-right: 0.1rem;
       }
     }
   }
 
   .show_photo {
     width: 100%;
-    margin-bottom: 1vh;
+    margin-bottom: 0.2rem;
     img {
       width: 100%;
       object-fit: contain;
