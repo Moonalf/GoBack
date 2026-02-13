@@ -36,7 +36,7 @@ const prefix = import.meta.env.BASE_URL
     flex-direction: column;
     align-items: center;
     width: 100%;
-    margin-top: 1vh;
+    margin-top: 0.1rem;
 
     .event_wrap {
       display: flex;
@@ -45,20 +45,20 @@ const prefix = import.meta.env.BASE_URL
       justify-content: center;
       width: 100%;
       text-align: center;
-      font-size: 2vh;
+      font-size: 0.26rem;
       font-weight: bold;
       .event_date {
-        width: 40%;
+        width: 3.6rem;
       }
       .event_dot {
-        width: 2vh;
-        height: 2vh;
-        margin: 0 1vh;
+        width: 0.2rem;
+        height: 0.2rem;
+        margin: 0 0.05rem;
         background-color: rgba(0, 83, 117, 1);
         border-radius: 50%;
       }
       .event_name {
-        width: 40%;
+        width: 3.6rem;
       }
     }
 
@@ -73,22 +73,22 @@ const prefix = import.meta.env.BASE_URL
       .event_image {
         box-sizing: border-box;
         width: 50%;
-        padding: 1vh;
+        padding: 0.2rem;
         img {
           width: 100%;
           object-fit: contain;
-          border-radius: 1vh;
+          border-radius: 0.2rem;
         }
       }
 
       .event_statement {
         box-sizing: border-box;
         width: 50%;
-        min-height: 15vh;
-        padding: 1vh;
+        min-height: 2rem;
+        padding: 0.2rem;
         text-align: justify;
-        font-size: 1.5vh;
-        border-left: rgba(0, 83, 117, 1) 0.1vh solid;
+        font-size: 0.22rem;
+        border-left: rgba(0, 83, 117, 1) 0.01rem solid;
       }
     }
   }

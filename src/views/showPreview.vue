@@ -112,7 +112,7 @@ const linkVideo = (url: string) => {
   align-items: center;
   position: fixed;
   top: 0;
-  width: min(100vw, 50vh);
+  width: 7.5rem;
   height: 100vh;
   padding: 0 2vh;
   padding-bottom: 10vh;

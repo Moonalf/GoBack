@@ -15,7 +15,7 @@
   position: fixed;
   top: 0;
   left: calc(min(50vw, 25vh)-50vw);
-  width: min(100vw, 50vh);
+  width: 7.5rem;
   height: 100vh;
   background-color: rgba(0, 83, 117);
   overflow: hidden;

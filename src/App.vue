@@ -23,7 +23,7 @@ html {
   flex-direction: column;
   align-items: center;
   body {
-    width: min(100vw, 50vh);
+    width: 7.5rem;
     height: 100vh;
     margin: 0;
     padding: 0;
@@ -32,18 +32,20 @@ html {
       display: flex;
       flex-direction: row;
       justify-content: center;
-      width: min(100vw, 50vh);
+      width: 7.5rem;
       height: 100vh;
       margin: 0;
       padding: 0;
       background-color: wheat;
 
       .container {
-        width: min(100vw, 50vh);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        width: 7.5rem;
         height: 100vh;
         margin: 0 auto;
-        padding-top: 13vh;
-        padding-bottom: 7vh;
         background: linear-gradient(
           135deg,
           rgba(0, 83, 117, 0) 0%,

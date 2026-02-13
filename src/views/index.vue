@@ -18,7 +18,6 @@
     </div>
     <div class="title">“爱的回归线”</div>
     <HistoryLine></HistoryLine>
-    <div class="footer_box"></div>
   </div>
 </template>
 
@@ -40,33 +39,32 @@ onMounted(() => {
 
 <style lang="less" scoped>
 .home {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
   width: 100%;
-  height: 87vh;
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: hidden;
   .home_container {
-    width: 95%;
-    margin: 2vh auto;
+    width: 90%;
+    margin: 0.3rem 0;
     .home_text {
-      font-size: 1.8vh;
+      font-size: 0.24rem;
       color: black;
       text-align: justify;
-      text-indent: 3vh;
+      text-indent: 0.4rem;
     }
   }
   .title {
     width: 100%;
-    margin: 2vh 0;
-    margin-top: 6vh;
-    font-size: 2vh;
+    margin: 0.3rem 0;
+    font-size: 0.3rem;
     color: rgba(0, 83, 117, 1);
     font-weight: bold;
     font-style: italic;
     text-align: center;
-  }
-  .footer_box {
-    flex-shrink: 0;
-    height: 10vh;
   }
 }
 </style>

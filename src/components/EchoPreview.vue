@@ -35,7 +35,7 @@ const closeEchoPreview = () => {
   align-items: flex-end;
   position: fixed;
   top: 0;
-  width: min(100vw, 50vh);
+  width: 7.5rem;
   height: 100vh;
   padding: 2vh;
   padding-bottom: 12vh;

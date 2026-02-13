@@ -1,7 +1,7 @@
 <template>
   <div class="banner" id="banner">
     <div
-      class="banner_wrap ready goback_mark"
+      :class="'banner_wrap goback_mark ' + getCss(index)"
       v-for="(banner, index) in banners"
       :key="'banner-' + banner"
       :id="'banner_' + index"
@@ -33,28 +33,26 @@ const banners = [
   'banners/banner_wulong.webp',
   'banners/banner_taohuayuan.webp',
 ]
-import { onMounted, onUnmounted, onActivated, onDeactivated } from 'vue'
+import { ref } from 'vue'
+const readyIndex = ref(2)
+const rightIndex = ref(1)
+const centerIndex = ref(0)
+const leftIndex = ref(banners.length - 1)
+const fadeIndex = ref(banners.length - 2)
 let interval: any = null
-let index = 0
+
+import { onMounted, onUnmounted, onActivated, onDeactivated } from 'vue'
+
 onActivated(() => {
-  console.log('播放banner')
-  const bannerItem = document.getElementById('banner_' + index)
-  bannerItem?.classList.remove('ready')
-  bannerItem?.classList.add('appear')
+  if (interval) {
+    clearInterval(interval)
+  }
   interval = setInterval(() => {
-    console.log(index, (index - 1 + banners.length) % banners.length, (index + 1) % banners.length)
-    const readyItem = document.getElementById(
-      'banner_' + ((index - 1 + banners.length) % banners.length),
-    )
-    readyItem?.classList.remove('fade')
-    readyItem?.classList.add('ready')
-    const fadeItem = document.getElementById('banner_' + (index % banners.length))
-    fadeItem?.classList.remove('appear')
-    fadeItem?.classList.add('fade')
-    index = (index + 1) % banners.length
-    const appearItem = document.getElementById('banner_' + index)
-    appearItem?.classList.remove('ready')
-    appearItem?.classList.add('appear')
+    readyIndex.value = (readyIndex.value + 1) % banners.length
+    rightIndex.value = (rightIndex.value + 1) % banners.length
+    centerIndex.value = (centerIndex.value + 1) % banners.length
+    leftIndex.value = (leftIndex.value + 1) % banners.length
+    fadeIndex.value = (fadeIndex.value + 1) % banners.length
   }, 3000)
 })
 
@@ -62,38 +60,63 @@ onDeactivated(() => {
   console.log('暂停播放banner')
   clearInterval(interval)
 })
+
+const getCss = (index: number) => {
+  if (index == readyIndex.value) {
+    return 'ready'
+  } else if (index == rightIndex.value) {
+    return 'right'
+  } else if (index == centerIndex.value) {
+    return 'center'
+  } else if (index == leftIndex.value) {
+    return 'left'
+  } else if (index == fadeIndex.value) {
+    return 'fade'
+  } else {
+    return ''
+  }
+}
 </script>
 
 <style lang="less" scoped>
 .banner {
+  flex-shrink: 0;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
   position: relative;
-  width: min(100vw, 50vh);
-  height: calc(min(100vw, 50vh) / 3);
+  width: 7.5rem;
+  height: 2.5rem;
   .banner_wrap {
     position: absolute;
     top: 0;
-    width: min(100vw, 50vh);
+    left: 7.5rem;
+    width: 7.5rem;
     height: 100%;
-    transition: left 0.5s ease-in-out;
+    opacity: 0;
+    transition: transform 0.5s ease-in-out;
     img {
       height: 100%;
       object-fit: contain;
     }
     &.ready {
-      left: calc(1 * min(100vw, 50vh));
       opacity: 0;
     }
-    &.appear {
-      left: 0;
+    &.right {
+      opacity: 1;
+    }
+    &.center {
+      transform: translateX(-100%);
+      opacity: 1;
+    }
+    &.left {
+      transform: translateX(-200%);
       opacity: 1;
     }
     &.fade {
-      left: calc(-1 * min(100vw, 50vh));
-      opacity: 1;
+      transform: translateX(-200%);
+      opacity: 0;
     }
   }
 }

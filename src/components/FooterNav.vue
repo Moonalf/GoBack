@@ -74,16 +74,15 @@ watch(
 
 <style lang="less" scoped>
 .footer_nav {
+  box-sizing: border-box;
+  flex-shrink: 0;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  position: fixed;
-  bottom: 0;
-  width: min(100vw, 50vh);
-  height: 6vh;
+  width: 7.5rem;
+  height: 0.8rem;
   background-color: rgba(240, 255, 255, 1);
-  z-index: 5;
   overflow: hidden;
 
   .nav_item {
@@ -95,12 +94,12 @@ watch(
     width: 100%;
     height: 100%;
     color: rgba(0, 83, 117, 1);
-    font-size: 2vh;
+    font-size: 0.3rem;
     font-weight: bold;
     transition: all 0.2s ease-in-out;
     .nav_icon {
       height: 50%;
-      margin-right: 0.5vh;
+      margin-right: 0.1rem;
       img {
         height: 100%;
         object-fit: contain;
