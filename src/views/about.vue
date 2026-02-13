@@ -2,7 +2,6 @@
   <div class="about">
     <TeacherArea></TeacherArea>
     <ScriptArea></ScriptArea>
-    <div class="footer_box"></div>
   </div>
 </template>
 
@@ -13,33 +12,18 @@ defineOptions({
   name: 'about',
 })
 import { onMounted } from 'vue'
-onMounted(() => {
-  setTimeout(() => {
-    const loadingLayer = document.getElementById('loadingLayer')
-    loadingLayer?.classList.add('fade')
-  }, 2000)
-})
+onMounted(() => {})
 </script>
 
 <style lang="less" scoped>
 .about {
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
   width: 100%;
-  height: 87vh;
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: hidden;
-  .title {
-    margin: 2vh 0;
-    font-size: 2vh;
-    color: rgba(0, 83, 117, 1);
-    font-weight: bold;
-    font-style: italic;
-  }
-  .footer_box {
-    flex-shrink: 0;
-    height: 10vh;
-  }
 }
 </style>

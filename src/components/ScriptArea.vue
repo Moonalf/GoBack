@@ -2,15 +2,13 @@
   <div class="script_area">
     <div class="script_top">
       <div class="year_title">历年选本</div>
-      <div
-        :class="'prev_year_btn ' + (scriptIndex <= 0 ? 'valid' : '')"
-        @click="getPrevYearScripts"
-      ></div>
+      <div class="prev_year_btn_wrap" @click="getPrevYearScripts">
+        <div :class="'prev_year_btn ' + (scriptIndex <= 0 ? 'valid' : '')"></div>
+      </div>
       <div class="year_text">{{ getYear(scriptIndex) }}</div>
-      <div
-        :class="'next_year_btn ' + (scriptIndex >= scripts.length - 1 ? 'valid' : '')"
-        @click="getNextYearScripts"
-      ></div>
+      <div class="next_year_btn_wrap" @click="getNextYearScripts">
+        <div :class="'next_year_btn ' + (scriptIndex >= scripts.length - 1 ? 'valid' : '')"></div>
+      </div>
     </div>
     <div class="script_swiper" ref="swiperRef">
       <div
@@ -80,18 +78,6 @@ watch(
   () => scriptIndex.value,
   (newVal, oldVal) => {
     if (swiperRef) {
-      swiperRef.value?.classList.add('hide')
-      setTimeout(() => {
-        scriptList.length = 0
-        scriptList.push(...scripts[newVal])
-        hideIndex.value = -2
-        leftIndex.value = -1
-        centerIndex.value = 0
-        rightIndex.value = 1
-        readyIndex.value = 2
-        swiperRef.value?.classList.remove('hide')
-      }, 500)
-    } else {
       scriptList.length = 0
       scriptList.push(...scripts[newVal])
       hideIndex.value = -2
@@ -200,10 +186,10 @@ const getPrevYearScripts = () => {
   flex-direction: column;
   align-items: center;
   width: 95%;
-  margin-top: 2vh;
-  padding: 1vh;
+  margin: 0.5rem 0;
+  padding: 0.2rem;
   background: linear-gradient(135deg, rgba(0, 83, 117, 1), wheat);
-  border-radius: 2vh;
+  border-radius: 0.2rem;
   overflow: hidden;
 
   .script_top {
@@ -215,44 +201,54 @@ const getPrevYearScripts = () => {
 
     .year_title {
       flex: 1;
-      font-size: 2vh;
+      font-size: 0.3rem;
       font-weight: bold;
       text-align: left;
     }
 
-    .prev_year_btn {
-      width: 3vh;
-      height: 2vh;
-      background: #fff;
-      clip-path: polygon(0 50%, 50% 0, 50% 30%, 100% 30%, 100% 70%, 50% 70%, 50% 100%);
-      &.valid {
-        opacity: 0;
+    .prev_year_btn_wrap {
+      width: 0.4rem;
+      height: 0.3rem;
+
+      .prev_year_btn {
+        width: 0.4rem;
+        height: 0.3rem;
+        background: #fff;
+        clip-path: polygon(0 50%, 50% 0, 50% 30%, 100% 30%, 100% 70%, 50% 70%, 50% 100%);
+        &.valid {
+          opacity: 0;
+        }
       }
     }
 
     .year_text {
-      margin: 0 1vh;
+      margin: 0 0.1rem;
       color: #fff;
-      font-size: 1.8vh;
+      font-size: 0.24rem;
       font-style: italic;
     }
 
-    .next_year_btn {
-      width: 3vh;
-      height: 2vh;
-      background: #fff;
-      clip-path: polygon(100% 50%, 50% 0, 50% 30%, 0 30%, 0 70%, 50% 70%, 50% 100%);
-      &.valid {
-        opacity: 0;
+    .next_year_btn_wrap {
+      width: 0.4rem;
+      height: 0.3rem;
+
+      .next_year_btn {
+        width: 0.4rem;
+        height: 0.3rem;
+        background: #fff;
+        clip-path: polygon(100% 50%, 50% 0, 50% 30%, 0 30%, 0 70%, 50% 70%, 50% 100%);
+        &.valid {
+          opacity: 0;
+        }
       }
     }
   }
 
   .script_swiper {
     position: relative;
-    width: min(90vw, 45vh);
-    height: 30vh;
-    margin: 2vh 0;
+    width: 7rem;
+    height: 4.8rem;
+    margin: 0.2rem 0;
     overflow: hidden;
     opacity: 1;
     transition: opacity 0.5s ease-in-out;
@@ -267,12 +263,12 @@ const getPrevYearScripts = () => {
       align-items: center;
       justify-content: center;
       position: absolute;
-      left: min(90vw, 45vh);
-      top: 2.5vh;
-      width: min(40vw, 20vh);
-      height: 25vh;
+      left: 7rem;
+      top: 0.4rem;
+      width: 3rem;
+      height: 4rem;
       background: #ffe4e1;
-      border-radius: 1vh;
+      border-radius: 0.15rem;
       overflow: hidden;
       opacity: 0;
       transition:
@@ -315,21 +311,21 @@ const getPrevYearScripts = () => {
         );
 
         .script_name {
-          max-width: 90%;
-          margin-top: 0.5vh;
-          margin-left: 0.5vh;
-          font-size: 2.5vh;
+          max-width: 2.6rem;
+          margin-top: 0.2rem;
+          margin-left: 0.2rem;
+          font-size: 0.36rem;
           font-weight: 900;
-          color: lightgray;
-          text-shadow: 0.2vh -0.2vh 0.5vh #000;
+          color: rgba(192, 192, 192, 1);
+          text-shadow: 0.03rem -0.03rem 0.01rem #000;
         }
 
         .script_from {
           width: 100%;
-          margin-left: 1vh;
-          margin-bottom: 0.5vh;
+          margin-left: 0.2rem;
+          margin-bottom: 0.1rem;
           color: #666;
-          font-size: 1.2vh;
+          font-size: 0.18rem;
           white-space: nowrap;
           overflow: hidden;
         }
@@ -340,21 +336,21 @@ const getPrevYearScripts = () => {
           align-items: center;
           justify-content: flex-start;
           width: 100%;
-          margin-left: 1vh;
+          margin-left: 0.2rem;
           overflow: hidden;
 
           .script_tag {
             flex-shrink: 0;
-            margin-right: 0.5vh;
-            padding: 0 0.2vh;
+            margin-right: 0.1rem;
+            padding: 0 0.05rem;
             color: brown;
-            font-size: 1vh;
-            border-radius: 0.5vh;
-            border: brown 0.1vh solid;
+            font-size: 0.16rem;
+            border-radius: 0.05rem;
+            border: brown 0.01rem solid;
 
             &.duration {
               color: rgba(0, 83, 117, 1);
-              border: rgba(0, 83, 117, 1) 0.1vh solid;
+              border: rgba(0, 83, 117, 1) 0.01rem solid;
             }
           }
         }

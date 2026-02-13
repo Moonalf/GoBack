@@ -58,12 +58,12 @@ onMounted(() => {
 .teacher_area {
   box-sizing: border-box;
   width: 95%;
-  padding: 1vh;
+  padding: 0.2rem;
   background: linear-gradient(135deg, rgba(0, 83, 117, 1), wheat);
-  border-radius: 2vh;
+  border-radius: 0.2rem;
 
   .teacher_title {
-    font-size: 2vh;
+    font-size: 0.3rem;
     font-weight: bold;
   }
 
@@ -72,23 +72,24 @@ onMounted(() => {
     flex-direction: row;
     align-items: flex-end;
     justify-content: flex-start;
-    height: 13vh;
+    height: 2rem;
     overflow-x: scroll;
     overflow-y: hidden;
     .avatar_wrap {
       flex-shrink: 0;
-      width: 7.5vh;
-      height: 10vh;
-      margin-right: 1vh;
+      width: 1.2rem;
+      height: 1.6rem;
+      margin-right: 0.1rem;
       border-radius: 1vh;
-      border: gray 0.1vh solid;
+      border: gray 0.03rem solid;
       overflow: hidden;
+      transform-origin: left bottom;
       transition: all 0.2s ease-in-out;
 
       &.selected {
-        transform: scale(1.2) translateY(-1vh) translateX(1vh);
-        margin-right: 3vh;
-        border: rgba(0, 83, 117, 1) 0.3vh solid;
+        transform: scale(1.2);
+        margin-right: 0.36rem;
+        border: rgba(0, 83, 117, 1) 0.05rem solid;
       }
       img {
         width: 100%;
@@ -101,29 +102,28 @@ onMounted(() => {
     box-sizing: border-box;
     position: relative;
     width: 100%;
-    height: 18vh;
-    margin: 1vh 0;
+    height: 2.5rem;
+    margin: 0.2rem 0;
 
     .info_wrap {
       position: absolute;
       top: 0;
       left: 0;
-
-      padding: 1vh;
+      padding: 0.1rem;
       background-color: rgba(255, 255, 255, 0.3);
-      border-radius: 1vh;
+      border-radius: 0.1rem;
       color: black;
       opacity: 0;
-      transform: translateX(3vh);
+      transform: translateX(0.2rem);
       transition: all 0.5s ease-in-out;
       .teacher_name {
-        font-size: 2vh;
+        font-size: 0.3rem;
         font-weight: bold;
       }
       .teacher_description {
-        height: 14vh;
-        font-size: 1.5vh;
-        line-height: 2vh;
+        height: 2rem;
+        font-size: 0.22rem;
+        line-height: 0.32rem;
         text-align: justify;
       }
       &.show {
@@ -132,7 +132,7 @@ onMounted(() => {
       }
       &.fade {
         opacity: 0;
-        transform: translateX(-3vh);
+        transform: translateX(-0.2rem);
       }
     }
   }
