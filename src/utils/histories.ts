@@ -95,7 +95,7 @@ export default [
     name: '告白之夜2025·秋',
     date: '2025年12月',
     statement: '告白话剧社十周年献礼，舞台上我们的灵魂永远鲜活。',
-    image: 'histories/history_gb2025.webp',
+    image: 'histories/history_gb20252.webp',
   },
   {
     name: '年戏 | 油漆未干',
