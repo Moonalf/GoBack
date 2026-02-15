@@ -14,8 +14,10 @@
       <div
         :class="'script_card ' + getCss(index)"
         :style="{
-          background: script.bgImage ? `url('${prefix + script.bgImage}')` : '#ffe4e1',
-          'background-origin': 'center bottom',
+          background: script.bgImage
+            ? `url('${prefix + script.bgImage}') no-repeat`
+            : `url('${prefix + 'scripts/default.webp'}') no-repeat`,
+          'background-position': 'center bottom',
           'background-size': '100% auto',
         }"
         v-for="(script, index) in scriptList"
