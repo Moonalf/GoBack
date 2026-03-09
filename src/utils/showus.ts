@@ -264,13 +264,13 @@ const showus = [
           },
           {
             name: '朱孟洋',
-            avatar: '',
+            avatar: 'members/default_member_m.webp',
             word: '',
             character: '其他',
           },
           {
             name: '袁媛',
-            avatar: '',
+            avatar: 'members/default_member_w.webp',
             word: '',
             character: '其他',
           },
@@ -516,7 +516,7 @@ const showus = [
           },
           {
             name: '李晗',
-            avatar: '',
+            avatar: 'members/default_member_m.webp',
             word: '',
             character: '中控',
           },
@@ -547,7 +547,7 @@ const showus = [
 
           {
             name: 'JX',
-            avatar: '',
+            avatar: 'members/default_member_w.webp',
             word: '',
             character: '其他',
           },
@@ -661,7 +661,7 @@ const showus = [
             },
             {
               name: '毛麾',
-              avatar: '',
+              avatar: 'members/default_member_m.webp',
               word: '',
               character: '保安',
               side: 'right',
@@ -810,7 +810,7 @@ const showus = [
           },
           {
             name: '李晗',
-            avatar: '',
+            avatar: 'members/default_member_m.webp',
             word: '',
             character: '中控',
           },
@@ -990,7 +990,7 @@ const showus = [
           },
           {
             name: '江冠洲',
-            avatar: '',
+            avatar: 'members/default_member_m.webp',
             word: '',
             character: '中控',
           },
@@ -1617,7 +1617,7 @@ const showus = [
           },
           {
             name: '如如',
-            avatar: '',
+            avatar: 'members/default_member_m.webp',
             word: '',
             character: '编剧',
           },
@@ -1633,7 +1633,7 @@ const showus = [
             },
             {
               name: '于康萌',
-              avatar: '',
+              avatar: 'members/default_member_m.webp',
               word: '',
               character: '萌萌',
               side: 'right',
@@ -2094,7 +2094,7 @@ const showus = [
             },
             {
               name: '刘琪瑞',
-              avatar: '',
+              avatar: 'members/default_member_w.webp',
               word: '',
               character: '革命烈士',
               side: 'right',
@@ -3316,7 +3316,7 @@ const showus = [
           },
           {
             name: '白线',
-            avatar: '',
+            avatar: 'members/default_member_w.webp',
             word: '',
             character: '妆造|中控',
           },
@@ -3479,7 +3479,7 @@ const showus = [
             },
             {
               name: '刘亚迪',
-              avatar: '',
+              avatar: 'members/default_member_w.webp',
               word: '大王负剑！大王负剑！',
               character: '旁白',
               side: 'right',
@@ -4412,7 +4412,7 @@ const showus = [
           },
           {
             name: '雨然',
-            avatar: '',
+            avatar: 'members/default_member_w.webp',
             word: '',
             character: '妆造',
           },
@@ -4448,19 +4448,19 @@ const showus = [
           },
           {
             name: '陈静怡',
-            avatar: '',
+            avatar: 'members/default_member_w.webp',
             word: '',
             character: '场务',
           },
           {
             name: '谢可欣',
-            avatar: '',
+            avatar: 'members/default_member_w.webp',
             word: '',
             character: '场务',
           },
           {
             name: '陈子聪',
-            avatar: '',
+            avatar: 'members/default_member_m.webp',
             word: '',
             character: '场务',
           },
@@ -4497,13 +4497,13 @@ const showus = [
 
           {
             name: '惠欣雨',
-            avatar: '',
+            avatar: 'members/default_member_w.webp',
             word: '',
             character: '摄影',
           },
           {
             name: '黄睿涵',
-            avatar: '',
+            avatar: 'members/default_member_w.webp',
             word: '',
             character: '摄影',
           },
