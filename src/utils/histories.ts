@@ -103,4 +103,10 @@ export default [
     statement: '摆脱耳麦的桎梏，纵享纯粹的话剧舞台。',
     image: 'histories/history_yqwg.webp',
   },
+  {
+    name: '告白之夜2026·春',
+    date: '2026年6月',
+    statement: '“我的心啊我的心，整栋出租，处处都给你。”',
+    image: 'histories/history_gb2026.webp',
+  },
 ]

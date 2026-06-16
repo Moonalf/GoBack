@@ -248,7 +248,7 @@ const scripts = [
   [
     {
       name: '八十一难',
-      from: '喜人奇妙夜第1季作品',
+      from: '喜人奇妙夜S1作品',
       tags: ['喜剧'],
       duration: 15,
       bgImage: 'scripts/bsyn.webp',
@@ -262,7 +262,7 @@ const scripts = [
     },
     {
       name: '心动的信号',
-      from: '喜人奇妙夜第1季作品',
+      from: '喜人奇妙夜S1作品',
       tags: ['喜剧'],
       duration: 20,
       bgImage: 'scripts/xddxh.webp',
@@ -306,7 +306,7 @@ const scripts = [
   [
     {
       name: '越狱的夏天',
-      from: '喜人奇妙夜第1季作品',
+      from: '喜人奇妙夜S1作品',
       tags: ['喜剧'],
       duration: 20,
       bgImage: 'scripts/yydxt.webp',
@@ -338,6 +338,34 @@ const scripts = [
       tags: ['喜剧'],
       duration: 120,
       bgImage: 'scripts/yqwg.webp',
+    },
+    {
+      name: '伤心侦探',
+      from: '喜剧大赛S2作品',
+      tags: ['喜剧', '音乐'],
+      duration: 15,
+      bgImage: '',
+    },
+    {
+      name: '爱人错过',
+      from: '喜剧大赛S1作品',
+      tags: ['喜剧', '爱情'],
+      duration: 10,
+      bgImage: '',
+    },
+    {
+      name: '肖像',
+      from: '★ 改编自电影《燃烧女子的肖像》',
+      tags: ['女性'],
+      duration: 30,
+      bgImage: '',
+    },
+    {
+      name: '小品的世界',
+      from: '喜人奇妙夜S1作品',
+      tags: ['喜剧', '元喜剧'],
+      duration: 20,
+      bgImage: '',
     },
   ],
 ]

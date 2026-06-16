@@ -82,11 +82,11 @@ watch(
     if (swiperRef) {
       scriptList.length = 0
       scriptList.push(...scripts[newVal])
-      hideIndex.value = -2
-      leftIndex.value = -1
-      centerIndex.value = 0
-      rightIndex.value = 1
-      readyIndex.value = 2
+      centerIndex.value = Math.min(centerIndex.value, scriptList.length - 1)
+      hideIndex.value = centerIndex.value - 2
+      leftIndex.value = centerIndex.value - 1
+      rightIndex.value = centerIndex.value + 1
+      readyIndex.value = centerIndex.value + 2
     }
   },
   { immediate: true },

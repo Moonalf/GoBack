@@ -15,6 +15,7 @@
 const prefix = import.meta.env.BASE_URL
 const banners = [
   'banners/banner_f104.webp',
+  'banners/banner_sszt.webp',
   'banners/banner_yqwg.webp',
   'banners/banner_bxk.webp',
   'banners/banner_gb2025yx.webp',
