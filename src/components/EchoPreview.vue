@@ -9,7 +9,18 @@
     </div>
     <img :src="prefix + (echo?.cover ?? '')" alt="" />
     <div class="echo_title">{{ echo?.title ?? '' }}</div>
-    <div class="echo_content" v-for="content in echo?.contents ?? []">{{ content ?? '' }}</div>
+    <div class="echo_content" v-for="content in echo?.contents ?? []">
+      <div class="text_content" v-if="content.type == 'text'" :style="content.style || ''">
+        {{ content.text }}
+      </div>
+      <div class="image_content" v-if="content.type == 'image'">
+        <img :src="prefix + (content?.src ?? '')" alt="" />
+        <div class="caption">{{ content.text }}</div>
+      </div>
+      <div class="link_content" v-if="content.type == 'link'">
+        <a :href="content.src || ''">{{ content.text }}</a>
+      </div>
+    </div>
     <div class="echo_tag">{{ '#' + (echo?.tags ?? []).join(' #') }}</div>
     <div class="echo_modified">{{ '编辑于' + (echo?.modified ?? '') }}</div>
   </div>
@@ -98,14 +109,45 @@ const closeEchoPreview = () => {
   .echo_title {
     width: 100%;
     margin: 0.2rem 0;
-    font-size: 0.3rem;
+    font-size: 0.32rem;
     font-weight: bold;
+    border-bottom: #fff 0.02rem solid;
   }
   .echo_content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
-    font-size: 0.24rem;
-    text-align: justify;
-    text-indent: 0.4rem;
+    .text_content {
+      width: 100%;
+      margin-bottom: 0.2rem;
+      font-size: 0.24rem;
+      text-align: justify;
+    }
+    .image_content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      margin-bottom: 0.2rem;
+      img {
+        width: 100%;
+        object-fit: contain;
+      }
+      .caption {
+        margin-top: 0.1rem;
+        color: grey;
+        font-size: 0.2rem;
+      }
+    }
+    .link_content {
+      width: 100%;
+      margin-bottom: 0.2rem;
+      a {
+        color: #c0c0c0;
+        text-decoration: underline;
+      }
+    }
   }
   .echo_tag {
     width: 100%;
