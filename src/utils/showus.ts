@@ -5112,6 +5112,31 @@ const showus = [
       },
     ],
   },
+  {
+    managers: [
+      {
+        name: '王德发',
+        avatar: 'members/2026-2027/wangds.webp',
+        word: '',
+      },
+      {
+        name: '沈爷',
+        avatar: 'members/2026-2027/shenhq.webp',
+        word: '',
+      },
+      {
+        name: '巴扎黑的鱼',
+        avatar: 'members/2026-2027/chenyr.webp',
+        word: '',
+      },
+      {
+        name: '破影大王',
+        avatar: 'members/2026-2027/yusy.webp',
+        word: '',
+      },
+    ],
+    shows: [],
+  },
 ].reverse()
 
 export default showus
