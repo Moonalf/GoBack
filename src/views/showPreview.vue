@@ -97,7 +97,11 @@ onMounted(() => {
 onUnmounted(() => {})
 
 const closeShowPreview = () => {
-  router.go(-1)
+  if (window.history.state?.back) {
+    router.go(-1)
+  } else {
+    router.replace('/')
+  }
 }
 const linkVideo = (url: string) => {
   window.location.href = url

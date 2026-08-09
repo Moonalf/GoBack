@@ -231,6 +231,7 @@ const handleScroll = () => {
         background: linear-gradient(135deg, rgba(0, 83, 117, 1), wheat);
         overflow-y: hidden;
         overflow-x: scroll;
+        touch-action: pan-x; /* 判定滑动方向：横向交给列表滚动，纵向交给页面滚动 */
 
         &.empty {
           display: flex;
