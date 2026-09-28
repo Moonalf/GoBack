@@ -5125,13 +5125,18 @@ const showus = [
         word: '',
       },
       {
-        name: '巴扎黑的鱼',
-        avatar: 'members/2026-2027/chenyr.webp',
+        name: '破影大王',
+        avatar: 'members/2026-2027/yusy.webp',
         word: '',
       },
       {
-        name: '破影大王',
-        avatar: 'members/2026-2027/yusy.webp',
+        name: '塔拉塔',
+        avatar: 'members/2026-2027/huangcs.webp',
+        word: '',
+      },
+      {
+        name: '肉包子',
+        avatar: 'members/2026-2027/liuhx.webp',
         word: '',
       },
     ],
