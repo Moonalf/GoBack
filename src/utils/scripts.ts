@@ -117,7 +117,7 @@ const scripts = [
     },
     {
       name: '谁杀死了周日',
-      from: '喜剧大赛S1作品',
+      from: '一年一度喜剧大赛S1作品',
       tags: ['喜剧'],
       duration: 10,
       bgImage: 'scripts/ssslzr.webp',
@@ -140,7 +140,7 @@ const scripts = [
     },
     {
       name: '时间都去哪儿了',
-      from: '喜剧大赛S1作品',
+      from: '一年一度喜剧大赛S1作品',
       tags: ['喜剧'],
       duration: 15,
       bgImage: 'scripts/sjdqnl.webp',
@@ -156,7 +156,7 @@ const scripts = [
   [
     {
       name: '警察与我之蛇我其谁',
-      from: '喜剧大赛S2作品',
+      from: '一年一度喜剧大赛S2作品',
       tags: ['喜剧'],
       duration: 15,
       bgImage: 'scripts/swqs.webp',
@@ -170,7 +170,7 @@ const scripts = [
     },
     {
       name: '少爷与小姐',
-      from: '喜剧大赛S2作品',
+      from: '一年一度喜剧大赛S2作品',
       tags: ['喜剧'],
       duration: 15,
       bgImage: 'scripts/syyxj.webp',
@@ -190,7 +190,7 @@ const scripts = [
     },
     {
       name: '一出不好戏',
-      from: '喜剧大赛S1作品',
+      from: '一年一度喜剧大赛S1作品',
       tags: ['喜剧'],
       duration: 10,
       bgImage: 'scripts/ycbhx.webp',
@@ -204,7 +204,7 @@ const scripts = [
     },
     {
       name: '警察与我',
-      from: '喜剧大赛S2作品',
+      from: '一年一度喜剧大赛S2作品',
       tags: ['喜剧'],
       duration: 10,
       bgImage: 'scripts/jcyw.webp',
@@ -218,7 +218,7 @@ const scripts = [
     },
     {
       name: '军师恋盟',
-      from: '喜剧大赛S2作品',
+      from: '一年一度喜剧大赛S2作品',
       tags: ['喜剧'],
       duration: 15,
       bgImage: 'scripts/jslm.webp',
@@ -232,7 +232,7 @@ const scripts = [
     },
     {
       name: '减肥帮往事',
-      from: '喜剧大赛S1作品',
+      from: '一年一度喜剧大赛S1作品',
       tags: ['喜剧'],
       duration: 10,
       bgImage: 'scripts/jfbws.webp',
@@ -341,14 +341,14 @@ const scripts = [
     },
     {
       name: '伤心侦探',
-      from: '喜剧大赛S2作品',
+      from: '一年一度喜剧大赛S2作品',
       tags: ['喜剧', '音乐'],
       duration: 15,
       bgImage: '',
     },
     {
       name: '爱人错过',
-      from: '喜剧大赛S1作品',
+      from: '一年一度喜剧大赛S1作品',
       tags: ['喜剧', '爱情'],
       duration: 10,
       bgImage: '',
@@ -364,6 +364,43 @@ const scripts = [
       name: '小品的世界',
       from: '喜人奇妙夜S1作品',
       tags: ['喜剧', '元喜剧'],
+      duration: 20,
+      bgImage: '',
+    },
+  ],
+  [
+    {
+      name: '心灵游戏',
+      from: '毕淑敏作品',
+      tags: ['悬疑'],
+      duration: 120,
+      bgImage: '',
+    },
+    {
+      name: '领养日',
+      from: '喜人奇妙夜S2作品',
+      tags: ['喜剧'],
+      duration: 20,
+      bgImage: '',
+    },
+    {
+      name: '史上第一大劫案',
+      from: '喜人奇妙夜S1作品',
+      tags: ['喜剧'],
+      duration: 15,
+      bgImage: '',
+    },
+    {
+      name: '这个杀手不大冷',
+      from: '一年一度喜剧大赛S1作品',
+      tags: ['喜剧'],
+      duration: 10,
+      bgImage: '',
+    },
+    {
+      name: '原野',
+      from: '★ 改编自小说《燃烧的原野》',
+      tags: ['魔幻现实'],
       duration: 20,
       bgImage: '',
     },

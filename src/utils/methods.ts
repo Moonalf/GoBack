@@ -5,6 +5,9 @@ export const getYear = (index: number) => {
 }
 
 export const getIdx = (index: number) => {
+  if (index >= 11 && index <= 19) {
+    return index.toString() + 'th'
+  }
   if (index.toString().endsWith('1')) {
     return index.toString() + 'st'
   }
