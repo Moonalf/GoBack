@@ -14,7 +14,12 @@
         {{ content.text }}
       </div>
       <div class="image_content" v-if="content.type == 'image'">
-        <img :src="prefix + (content?.src ?? '')" alt="" />
+        <img
+          :src="prefix + (content?.src ?? '')"
+          alt=""
+          :style="content.style || ''"
+          @load="onImgLoad"
+        />
         <div class="caption">{{ content.text }}</div>
       </div>
       <div class="link_content" v-if="content.type == 'link'">
@@ -35,6 +40,13 @@ const props = defineProps<{
 const emit = defineEmits(['closeEchoPreview'])
 const closeEchoPreview = () => {
   emit('closeEchoPreview')
+}
+const onImgLoad = (e: Event) => {
+  const img = e.target as HTMLImageElement
+  if (img.naturalHeight > img.naturalWidth) {
+    img.style.width = '50%'
+    img.style.margin = '0 auto'
+  }
 }
 </script>
 

@@ -1,9 +1,9 @@
 export default {
   author: '牢朱',
-  avatar: 'members/2025-2026/zhuhf.webp',
+  avatar: 'members/2025-2026/zhuhf.jpg',
   modified: '2026.08.17',
   title: '话剧社和我',
-  cover: 'echos/drama-and-me-cover.jpg',
+  cover: 'echos/drama-and-me/cover.jpg',
   contents: [
     {
       type: 'text',
@@ -55,11 +55,6 @@ export default {
     {
       type: 'text',
       text: '慢慢地，我淡出来了。我自认为我是一个后知后觉、慢热但长情的人，但是这一次，我有点太慢了，话剧社虽然还叫话剧社，但是本质已经脱胎换骨了，他不是曾经的他了，我还在这里，老朋友们一个个都毕业了，新朋友越来越少，没毕业的老朋友也慢慢淡出了，为什么我还坚持在这里舔着脸当一个前辈呢？或许我在这里有一种满级高手重刷新手村的爽感，有一种一定要把小号练得更好的执念，但是，是不是忽略了小号的主体性和能动性？',
-    },
-    {
-      type: 'image',
-      src: 'echos/drama-and-me-spotlight.jpg',
-      text: '空舞台上的一束光——属于每个人的时刻终将落幕',
     },
     {
       type: 'text',
