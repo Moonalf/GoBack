@@ -1,9 +1,9 @@
 export default {
   author: '牢朱',
-  avatar: 'members/2025-2026/zhuhf.jpg',
+  avatar: 'members/2025-2026/zhuhf.webp',
   modified: '2024.12.10',
   title: '关于12月8日演出的小结',
-  cover: 'echos/drama-dec-8/1d6af08703a14926.png',
+  cover: 'echos/drama-dec-8/1d6af08703a14926.webp',
   contents: [
     {
       type: 'text',
@@ -41,7 +41,7 @@ export default {
     },
     {
       type: 'image',
-      src: 'echos/drama-dec-8/23573e2e2d8e5a16.png',
+      src: 'echos/drama-dec-8/23573e2e2d8e5a16.webp',
       text: '彼时现场',
     },
     {
@@ -50,27 +50,27 @@ export default {
     },
     {
       type: 'image',
-      src: 'echos/drama-dec-8/9a8f6b9c62e3f2c9.png',
+      src: 'echos/drama-dec-8/9a8f6b9c62e3f2c9.webp',
       text: '招新通知短信',
     },
     {
       type: 'image',
-      src: 'echos/drama-dec-8/c14803b69f917ce1.png',
+      src: 'echos/drama-dec-8/c14803b69f917ce1.webp',
       text: '招新通知短信',
     },
     {
       type: 'image',
-      src: 'echos/drama-dec-8/1910439cf9ff2cc8.png',
+      src: 'echos/drama-dec-8/1910439cf9ff2cc8.webp',
       text: '牢陈海报经典图《酒后》',
     },
     {
       type: 'image',
-      src: 'echos/drama-dec-8/00085c4de300161f.jpg',
+      src: 'echos/drama-dec-8/00085c4de300161f.webp',
       text: '《酒后》',
     },
     {
       type: 'image',
-      src: 'echos/drama-dec-8/227423acc4dd6fad.jpg',
+      src: 'echos/drama-dec-8/227423acc4dd6fad.webp',
       text: '2021 年春季专场演出',
     },
     {
@@ -79,7 +79,7 @@ export default {
     },
     {
       type: 'image',
-      src: 'echos/drama-dec-8/b3a382bf9a815256.png',
+      src: 'echos/drama-dec-8/b3a382bf9a815256.webp',
       text: '院庆晚会节目审核现场',
     },
     {
@@ -88,7 +88,7 @@ export default {
     },
     {
       type: 'image',
-      src: 'echos/drama-dec-8/2a02a43f1caf2b5d.png',
+      src: 'echos/drama-dec-8/2a02a43f1caf2b5d.webp',
       text: '原定演出时间当天出的推迟通知',
     },
     {
@@ -97,7 +97,7 @@ export default {
     },
     {
       type: 'image',
-      src: 'echos/drama-dec-8/f180d8e6dd923835.jpg',
+      src: 'echos/drama-dec-8/f180d8e6dd923835.webp',
       text: '2023 年春季专场演出',
     },
     {
@@ -106,7 +106,7 @@ export default {
     },
     {
       type: 'image',
-      src: 'echos/drama-dec-8/45b06d5e18de4bcf.jpg',
+      src: 'echos/drama-dec-8/45b06d5e18de4bcf.webp',
       text: '2023 年秋季专场演出',
     },
     {
@@ -115,7 +115,7 @@ export default {
     },
     {
       type: 'image',
-      src: 'echos/drama-dec-8/5cbf692ec55ff147.jpg',
+      src: 'echos/drama-dec-8/5cbf692ec55ff147.webp',
       text: '牢王大一时参与节目审核',
     },
     {
@@ -124,7 +124,7 @@ export default {
     },
     {
       type: 'image',
-      src: 'echos/drama-dec-8/890557bf1680a6a3.png',
+      src: 'echos/drama-dec-8/890557bf1680a6a3.webp',
       text: '牢王主演《时间都去哪了》',
     },
     {
@@ -146,7 +146,7 @@ export default {
     },
     {
       type: 'image',
-      src: 'echos/drama-dec-8/bd6f691ec77fa04b.png',
+      src: 'echos/drama-dec-8/bd6f691ec77fa04b.webp',
       text: '桃乐丝白',
     },
     {
@@ -155,7 +155,7 @@ export default {
     },
     {
       type: 'image',
-      src: 'echos/drama-dec-8/4f5be708eed5e782.jpg',
+      src: 'echos/drama-dec-8/4f5be708eed5e782.webp',
       text: '《八十一难》',
     },
     {
@@ -164,7 +164,7 @@ export default {
     },
     {
       type: 'image',
-      src: 'echos/drama-dec-8/3681d19e9504f827.png',
+      src: 'echos/drama-dec-8/3681d19e9504f827.webp',
       text: '《心动的信号》',
     },
     {
@@ -173,7 +173,7 @@ export default {
     },
     {
       type: 'image',
-      src: 'echos/drama-dec-8/034fe4d89e20cd83.JPG',
+      src: 'echos/drama-dec-8/034fe4d89e20cd83.webp',
       text: '荆轲与燕姬',
     },
     {
@@ -182,7 +182,7 @@ export default {
     },
     {
       type: 'image',
-      src: 'echos/drama-dec-8/198552ddd39d3fba.jpg',
+      src: 'echos/drama-dec-8/198552ddd39d3fba.webp',
       text: '观众反响',
     },
     {

@@ -1,9 +1,9 @@
 export default {
   author: '牢朱',
-  avatar: 'members/2025-2026/zhuhf.jpg',
+  avatar: 'members/2025-2026/zhuhf.webp',
   modified: '2026.08.17',
   title: '话剧社和我',
-  cover: 'echos/drama-and-me/cover.jpg',
+  cover: 'echos/drama-and-me/cover.webp',
   contents: [
     {
       type: 'text',
