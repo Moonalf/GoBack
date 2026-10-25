@@ -4,7 +4,7 @@
       <div class="close_btn">← Go back</div>
     </div>
     <div class="intro_bg">
-      <img :src="prefix + (show?.introbg ?? '')" alt="" />
+      <img :src="prefix + (show?.introbg ?? '')" :alt="show?.title ?? ''" />
       <div class="shadow"></div>
     </div>
     <div class="show_title">{{ show?.title ?? '' }}</div>
@@ -36,8 +36,8 @@
     </div>
     <div class="sub_title">卡司阵容</div>
     <div class="cast_area" v-for="(castGroup, index) in castGroups as any" :key="'casts-' + index">
-      <div class="cast_group_name" v-if="show.programs && show.programs.length">
-        <div class="name">{{ '《' + show.programs[index] + '》剧组' }}</div>
+      <div class="cast_group_name" v-if="show?.programs && show.programs.length">
+        <div class="name">{{ '《' + show.programs?.[index] + '》剧组' }}</div>
         <div class="circle_icon"></div>
       </div>
       <div class="cast_group" v-for="(group, idx) in castGroup as any" :key="'cagroup-' + idx">
@@ -54,9 +54,11 @@
         ></CastCard>
       </div>
     </div>
-    <div class="sub_title" v-if="show?.photos && show?.photos.length">现场回顾</div>
-    <div class="show_photo" v-for="(photo, index) in show?.photos ?? []" :key="'photo-' + index">
-      <img :src="prefix + photo" alt="" />
+    <div class="show_photos_wrap" v-if="show?.photos && show?.photos.length">
+      <div class="sub_title">现场回顾</div>
+      <div class="show_photo" v-for="(photo, index) in show?.photos ?? []" :key="'photo-' + index">
+        <img :src="prefix + photo" :alt="show?.title ?? ''" loading="lazy" decoding="async" />
+      </div>
     </div>
   </div>
 </template>
@@ -77,24 +79,30 @@ const router = useRouter()
 const route = useRoute()
 
 const onCreated = () => {
-  let _idx = parseInt(String(route.query.idx) ?? '0')
-  let _idy = parseInt(String(route.query.idy) ?? '0')
-  show.value = showus[_idx].shows[_idy]
-  producerGroup.value = devideArr(show.value.producers, 4)
-  castGroups.value = show.value.casts.map((group: any, index: number) => {
-    return devideArr(group, 3)
-  })
+  const _idx = Number.parseInt(String(route.query.idx ?? '0'), 10)
+  const _idy = Number.parseInt(String(route.query.idy ?? '0'), 10)
+  const target =
+    Number.isInteger(_idx) && Number.isInteger(_idy) ? showus[_idx]?.shows?.[_idy] : undefined
+  // 参数非法或越界时回退到演出列表，避免整页白屏
+  if (!target) {
+    router.replace({ name: 'showus' })
+    return
+  }
+  show.value = target
+  // 不按固定数量分组，全部放入一组，由 CSS flex-wrap 控制换行（响应式）
+  producerGroup.value = devideArr(show.value.producers ?? [], show.value.producers?.length ?? 0)
+  castGroups.value = (show.value.casts ?? []).map((group: any) =>
+    devideArr(group, group.length),
+  )
 }
 onCreated()
 
 import { onMounted, onUnmounted } from 'vue'
-onMounted(() => {
-  //   const showPreview = document.getElementById('showPreview')
-  //   if (showPreview) {
-  //     showPreview.classList.add('show')
-  //   }
-})
-onUnmounted(() => {})
+const onKeydown = (e: KeyboardEvent) => {
+  if (e.key === 'Escape') closeShowPreview()
+}
+onMounted(() => window.addEventListener('keydown', onKeydown))
+onUnmounted(() => window.removeEventListener('keydown', onKeydown))
 
 const closeShowPreview = () => {
   if (window.history.state?.back) {
@@ -118,12 +126,14 @@ const linkVideo = (url: string) => {
   top: 0;
   width: 7.5rem;
   height: 100vh;
+  height: 100dvh;
   padding: 0 0.25rem;
   padding-bottom: 1.6rem;
   background: linear-gradient(180deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.9));
   z-index: 20;
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: hidden;
+  overscroll-behavior: contain;
   transition: opacity 5s ease-in-out;
   color: white;
 
@@ -216,6 +226,7 @@ const linkVideo = (url: string) => {
     padding-left: 0.4rem;
     font-size: 0.24rem;
     color: wheat;
+    cursor: pointer;
     .play_icon {
       width: 0.3rem;
       height: 0.3rem;
@@ -236,6 +247,7 @@ const linkVideo = (url: string) => {
   .producer_group {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: flex-start;
     align-items: center;
     width: 100%;
@@ -279,6 +291,7 @@ const linkVideo = (url: string) => {
     .cast_group {
       display: flex;
       flex-direction: row;
+      flex-wrap: wrap;
       justify-content: flex-start;
       align-items: center;
       width: 100%;
@@ -299,6 +312,86 @@ const linkVideo = (url: string) => {
     img {
       width: 100%;
       object-fit: contain;
+    }
+  }
+}
+
+/* 桌面宽屏：弹层铺满加宽后的页面，演员/制作团队卡片居中分布 */
+@media (min-width: 1280px) {
+  .show_preview {
+    width: 20rem;
+    padding: 0 0.5rem;
+    padding-bottom: 1.6rem;
+
+    .producer_group {
+      align-self: stretch;
+      width: 100%;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      .producer_card {
+        width: 1.6rem;
+        margin: 0.1rem 0.12rem;
+      }
+    }
+
+    .cast_area {
+      align-self: stretch;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: flex-start;
+      width: 100%;
+
+      .cast_group_name {
+        width: 100%;
+      }
+
+      .cast_group {
+        width: auto;
+        justify-content: center;
+
+        :deep(.cast_card) {
+          width: 1.6rem;
+          height: auto;
+          margin: 0.1rem 0.12rem;
+          transform: none !important;
+
+          img {
+            width: 100%;
+            height: auto;
+          }
+        }
+      }
+    }
+
+    /* 现场回顾：一行放多张缩略图，不再整行平铺 */
+    .show_photos_wrap {
+      align-self: stretch;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      .sub_title {
+        width: 100%;
+      }
+
+      .show_photo {
+        width: auto;
+        margin: 0.1rem;
+
+        img {
+          width: auto;
+          height: auto;
+          max-width: 5rem;
+          max-height: 5rem;
+          object-fit: contain;
+          border-radius: 0.1rem;
+        }
+      }
     }
   }
 }

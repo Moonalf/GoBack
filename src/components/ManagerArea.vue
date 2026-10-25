@@ -72,4 +72,39 @@ const props = defineProps<{
     }
   }
 }
+
+/* 桌面宽屏：所有成员一行排开，社长居中 */
+@media (min-width: 1280px) {
+  .manager_area {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3rem;
+
+    .managers {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 0.3rem;
+
+      .master {
+        width: 2rem;
+        height: 2rem;
+      }
+      .vice {
+        width: 1.6rem;
+        height: 1.6rem;
+        margin: 0;
+      }
+      .placeholder {
+        width: 1.6rem;
+        height: 1.6rem;
+        margin: 0;
+      }
+    }
+  }
+}
 </style>

@@ -7,14 +7,17 @@
         哈尔滨工业大学（深圳）学生艺术团话剧部（告白话剧社），于2015年9月成立。自成立以来，话剧部始终朝着先进艺术社团的方向探索前行，始终为丰富校园生活、发展戏剧文化不懈追求和努力着。
       </div>
       <div class="home_text">
-        本网站由第五届社长『月半衔蝉（十三太保）』维护，用于记录剧社的演出活动和历代成员，在收集信息的过程中难免有疏漏错误。如果有任何需要补充、修改或删除的信息，请联系：<u
-          >916824242@qq.com</u
-        >
+        本网站由第五届社长『月半衔蝉（十三太保）』维护，用于记录剧社的演出活动和历代成员，在收集信息的过程中难免有疏漏错误。如果有任何需要补充、修改或删除的信息，请联系：
+        <a class="home_link" href="mailto:916824242@qq.com">916824242@qq.com</a>
       </div>
       <div class="home_text">
         网站源码是开源的。必要的时候，或许会出现一个有缘人能接过维护网站的责任。开源地址：
       </div>
-      <div class="home_text"><u>https://github.com/Moonalf/GoBack</u></div>
+      <div class="home_text">
+        <a class="home_link" href="https://github.com/Moonalf/GoBack" target="_blank" rel="noopener">
+          https://github.com/Moonalf/GoBack
+        </a>
+      </div>
     </div>
     <div class="title">“爱的回归线”</div>
     <HistoryLine></HistoryLine>
@@ -55,6 +58,14 @@ onMounted(() => {
       color: black;
       text-align: justify;
       text-indent: 0.4rem;
+      .home_link {
+        color: rgba(0, 83, 117, 1);
+        font-weight: bold;
+        text-decoration: underline;
+        text-decoration-thickness: 0.01rem;
+        text-underline-offset: 0.04rem;
+        word-break: break-all;
+      }
     }
   }
   .title {

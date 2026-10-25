@@ -4,10 +4,10 @@
       <div class="close_btn">← Go back</div>
     </div>
     <div class="echo_info">
-      <img :src="prefix + (echo?.avatar ?? '')" alt="" />
+      <img :src="prefix + (echo?.avatar ?? '')" :alt="echo?.author ?? ''" />
       <div>{{ echo?.author ?? '' }}</div>
     </div>
-    <img :src="prefix + (echo?.cover ?? '')" alt="" />
+    <img :src="prefix + (echo?.cover ?? '')" :alt="echo?.title ?? ''" />
     <div class="echo_title">{{ echo?.title ?? '' }}</div>
     <div class="echo_content" v-for="content in echo?.contents ?? []">
       <div class="text_content" v-if="content.type == 'text'" :style="content.style || ''">
@@ -16,14 +16,16 @@
       <div class="image_content" v-if="content.type == 'image'">
         <img
           :src="prefix + (content?.src ?? '')"
-          alt=""
+          :alt="content?.text ?? ''"
           :style="content.style || ''"
+          loading="lazy"
+          decoding="async"
           @load="onImgLoad"
         />
         <div class="caption">{{ content.text }}</div>
       </div>
       <div class="link_content" v-if="content.type == 'link'">
-        <a :href="content.src || ''">{{ content.text }}</a>
+        <a :href="content.src || ''" target="_blank" rel="noopener">{{ content.text }}</a>
       </div>
     </div>
     <div class="echo_tag">{{ '#' + (echo?.tags ?? []).join(' #') }}</div>
@@ -32,6 +34,7 @@
 </template>
 
 <script lang="ts" setup>
+import { onMounted, onUnmounted } from 'vue'
 const prefix = import.meta.env.BASE_URL
 const props = defineProps<{
   echo: any
@@ -41,6 +44,18 @@ const emit = defineEmits(['closeEchoPreview'])
 const closeEchoPreview = () => {
   emit('closeEchoPreview')
 }
+
+// 弹层展开时支持 ESC 关闭
+const onKeydown = (e: KeyboardEvent) => {
+  if (e.key !== 'Escape') return
+  const preview = document.querySelector('.echo_preview')
+  if (preview?.classList.contains('show')) {
+    closeEchoPreview()
+  }
+}
+onMounted(() => window.addEventListener('keydown', onKeydown))
+onUnmounted(() => window.removeEventListener('keydown', onKeydown))
+
 const onImgLoad = (e: Event) => {
   const img = e.target as HTMLImageElement
   if (img.naturalHeight > img.naturalWidth) {
@@ -60,18 +75,26 @@ const onImgLoad = (e: Event) => {
   top: 0;
   width: 7.5rem;
   height: 100vh;
+  height: 100dvh;
   padding: 0.25rem;
   padding-bottom: 1.6rem;
   background: linear-gradient(180deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.9));
   opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
   z-index: -1;
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: hidden;
-  transition: all 0.2s ease-in-out;
+  overscroll-behavior: contain;
+  transition:
+    opacity 0.2s ease-in-out,
+    visibility 0.2s ease-in-out;
   color: white;
 
   &.show {
     opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
     z-index: 20;
   }
 
@@ -172,6 +195,33 @@ const onImgLoad = (e: Event) => {
     margin: 0.2rem 0;
     font-size: 0.2rem;
     color: gray;
+  }
+}
+
+/* 桌面宽屏：弹层铺满加宽后的页面，文章内容限宽避免一行过长 */
+@media (min-width: 1280px) {
+  .echo_preview {
+    width: 20rem;
+
+    /* 封面图也限宽居中 */
+    > img {
+      width: auto;
+      max-width: 11rem;
+      margin: 0 auto;
+    }
+
+    .echo_content {
+      max-width: 11rem;
+      margin-left: auto;
+      margin-right: auto;
+
+      .image_content {
+        img {
+          width: auto;
+          max-width: 11rem;
+        }
+      }
+    }
   }
 }
 </style>

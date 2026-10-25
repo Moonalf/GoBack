@@ -1,6 +1,6 @@
 <template>
   <div class="show_card" @click="showShowPreview">
-    <img :src="prefix + show.cover" alt="" />
+    <img :src="prefix + show.cover" :alt="show.title" loading="lazy" decoding="async" />
     <div class="title_wrap">
       <div class="show_title">{{ show.title + (show.subtitle ? '——' + show.subtitle : '') }}</div>
     </div>
@@ -26,7 +26,9 @@ const showShowPreview = () => {
   margin: 0 0.15rem;
   border-radius: 0.2rem;
   overflow: hidden;
-  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  scroll-snap-align: start;
+  transition: transform 0.3s ease-in-out;
 
   &:active {
     transform: translateY(-0.2rem);

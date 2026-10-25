@@ -26,4 +26,15 @@ onMounted(() => {})
   overflow-y: auto;
   overflow-x: hidden;
 }
+
+/* 桌面宽屏：两个板块限宽居中，内部卡片保持原始尺寸 */
+@media (min-width: 1280px) {
+  .about {
+    padding-top: 0.2rem;
+    > * {
+      width: 95%;
+      max-width: 16rem;
+    }
+  }
+}
 </style>

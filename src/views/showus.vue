@@ -230,7 +230,9 @@ const handleScroll = () => {
         margin-bottom: 0.5rem;
         background: linear-gradient(135deg, rgba(0, 83, 117, 1), wheat);
         overflow-y: hidden;
-        overflow-x: scroll;
+        overflow-x: auto;
+        overscroll-behavior-x: contain;
+        scroll-snap-type: x proximity;
         touch-action: pan-x; /* 判定滑动方向：横向交给列表滚动，纵向交给页面滚动 */
 
         &.empty {
@@ -249,6 +251,7 @@ const handleScroll = () => {
         }
       }
 
+      /* 胶片齿孔遮罩 */
       .film {
         clip-path: polygon(
           0 0,
@@ -555,6 +558,61 @@ const handleScroll = () => {
           0 100%,
           0 0
         );
+      }
+    }
+  }
+}
+
+/* 桌面宽屏：取消倾斜，恢复纵向堆叠，管理层一行排开（已在 ManagerArea 内处理） */
+@media (min-width: 1280px) {
+  .showus {
+    .showus_block_wrap {
+      width: 100%;
+      max-width: 18rem;
+      margin: 0.6rem auto;
+
+      /* 宽屏取消倾斜 */
+      &.left .showus_block {
+        transform: none;
+      }
+      &.right .showus_block {
+        transform: none;
+      }
+
+      .showus_block {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
+        padding: 0.2rem 0.8rem;
+
+        .year_wrap {
+          width: 90%;
+        }
+
+        :deep(.manager_area) {
+          width: 100%;
+          padding: 0.2rem 0;
+        }
+
+        .show_card_list {
+          width: 100%;
+          height: 3.6rem;
+          display: flex;
+          flex-direction: row;
+          flex-wrap: nowrap;
+          align-items: center;
+          justify-content: center;
+          overflow-x: auto;
+          overflow-y: hidden;
+          padding: 0.1rem;
+
+          .show_card {
+            width: 4.2rem;
+            height: 2.8rem;
+            margin: 0 0.1rem;
+            flex-shrink: 0;
+          }
+        }
       }
     }
   }

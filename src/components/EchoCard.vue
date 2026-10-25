@@ -1,9 +1,9 @@
 <template>
   <div class="echo_card" @click="showEchoPreview">
-    <img :src="prefix + echo.cover" alt="" />
+    <img :src="prefix + echo.cover" :alt="echo.title" loading="lazy" decoding="async" />
     <div class="echo_title">{{ echo.title }}</div>
     <div class="echo_info">
-      <img :src="prefix + echo.avatar" alt="" />
+      <img :src="prefix + echo.avatar" :alt="echo.author" loading="lazy" decoding="async" />
       <div>{{ echo.author }}</div>
       <div class="echo_modified">{{ echo.modified }}</div>
     </div>
@@ -31,7 +31,8 @@ const showEchoPreview = () => {
   border-radius: 0.2rem;
   background-color: rgba(255, 255, 255, 0.3);
   overflow: hidden;
-  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
 
   &:active {
     transform: translateY(-5%);
@@ -55,21 +56,31 @@ const showEchoPreview = () => {
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
-    position: relative;
     width: 100%;
     padding-left: 0.1rem;
+    padding-right: 0.1rem;
     padding-bottom: 0.1rem;
     color: #666;
     font-size: 0.2rem;
+    gap: 0.1rem;
+    & > div:not(.echo_modified) {
+      flex: 1;
+      min-width: 0;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
     img {
       width: 0.5rem;
       height: 0.5rem;
       object-fit: cover;
       border-radius: 50%;
+      flex-shrink: 0;
     }
     .echo_modified {
-      position: absolute;
-      right: 0.1rem;
+      flex-shrink: 0;
+      margin-left: auto;
+      color: #8a8a8a;
     }
   }
 }

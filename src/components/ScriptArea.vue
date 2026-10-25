@@ -2,12 +2,22 @@
   <div class="script_area">
     <div class="script_top">
       <div class="year_title">历年选本</div>
-      <div class="prev_year_btn_wrap" @click="getPrevYearScripts">
-        <div :class="'prev_year_btn ' + (scriptIndex <= 0 ? 'valid' : '')"></div>
+      <div
+        :class="'prev_year_btn_wrap ' + (scriptIndex <= 0 ? 'valid' : '')"
+        role="button"
+        aria-label="上一年"
+        @click="getPrevYearScripts"
+      >
+        <div class="prev_year_btn"></div>
       </div>
       <div class="year_text">{{ getYear(scriptIndex) }}</div>
-      <div class="next_year_btn_wrap" @click="getNextYearScripts">
-        <div :class="'next_year_btn ' + (scriptIndex >= scripts.length - 1 ? 'valid' : '')"></div>
+      <div
+        :class="'next_year_btn_wrap ' + (scriptIndex >= scripts.length - 1 ? 'valid' : '')"
+        role="button"
+        aria-label="下一年"
+        @click="getNextYearScripts"
+      >
+        <div class="next_year_btn"></div>
       </div>
     </div>
     <div class="script_swiper" ref="swiperRef">
@@ -61,7 +71,6 @@ const SWIPE_THRESHOLD = 50 // 像素阈值
 
 import { onMounted, onUnmounted } from 'vue'
 onMounted(() => {
-  console.log('查看剧本数量', scriptList.length, scriptList)
   if (swiperRef.value) {
     swiperRef.value.addEventListener('touchstart', onTouchStart, { passive: false })
     swiperRef.value.addEventListener('touchmove', onTouchMove, { passive: false })
@@ -209,17 +218,23 @@ const getPrevYearScripts = () => {
     }
 
     .prev_year_btn_wrap {
-      width: 0.4rem;
-      height: 0.3rem;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      width: 0.6rem;
+      height: 0.6rem;
+      cursor: pointer;
+      &.valid {
+        opacity: 0.3;
+        pointer-events: none;
+      }
 
       .prev_year_btn {
         width: 0.4rem;
         height: 0.3rem;
         background: #fff;
         clip-path: polygon(0 50%, 50% 0, 50% 30%, 100% 30%, 100% 70%, 50% 70%, 50% 100%);
-        &.valid {
-          opacity: 0;
-        }
       }
     }
 
@@ -231,17 +246,23 @@ const getPrevYearScripts = () => {
     }
 
     .next_year_btn_wrap {
-      width: 0.4rem;
-      height: 0.3rem;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      width: 0.6rem;
+      height: 0.6rem;
+      cursor: pointer;
+      &.valid {
+        opacity: 0.3;
+        pointer-events: none;
+      }
 
       .next_year_btn {
         width: 0.4rem;
         height: 0.3rem;
         background: #fff;
         clip-path: polygon(100% 50%, 50% 0, 50% 30%, 0 30%, 0 70%, 50% 70%, 50% 100%);
-        &.valid {
-          opacity: 0;
-        }
       }
     }
   }
@@ -252,12 +273,7 @@ const getPrevYearScripts = () => {
     height: 4.8rem;
     margin: 0.2rem 0;
     overflow: hidden;
-    opacity: 1;
-    transition: opacity 0.5s ease-in-out;
-
-    &.hide {
-      opacity: 0;
-    }
+    touch-action: pan-y;
 
     .script_card {
       display: flex;
@@ -273,6 +289,7 @@ const getPrevYearScripts = () => {
       border-radius: 0.15rem;
       overflow: hidden;
       opacity: 0;
+      cursor: pointer;
       transition:
         transform 0.5s ease-in-out,
         opacity 0.5s ease-in-out;
@@ -318,8 +335,8 @@ const getPrevYearScripts = () => {
           margin-left: 0.2rem;
           font-size: 0.36rem;
           font-weight: 900;
-          color: rgba(192, 192, 192, 1);
-          text-shadow: 0.03rem -0.03rem 0.01rem #000;
+          color: rgba(0, 83, 117, 1);
+          text-shadow: 0.02rem 0.02rem 0.02rem rgba(255, 255, 255, 0.8);
         }
 
         .script_from {
@@ -330,6 +347,7 @@ const getPrevYearScripts = () => {
           font-size: 0.18rem;
           white-space: nowrap;
           overflow: hidden;
+          text-overflow: ellipsis;
         }
 
         .script_tags {
@@ -340,6 +358,8 @@ const getPrevYearScripts = () => {
           width: 100%;
           margin-left: 0.2rem;
           overflow: hidden;
+          -webkit-mask-image: linear-gradient(90deg, #000 88%, transparent 100%);
+          mask-image: linear-gradient(90deg, #000 88%, transparent 100%);
 
           .script_tag {
             flex-shrink: 0;
@@ -355,6 +375,48 @@ const getPrevYearScripts = () => {
               border: rgba(0, 83, 117, 1) 0.01rem solid;
             }
           }
+        }
+      }
+    }
+  }
+}
+
+/* 桌面宽屏：脚本卡片以网格形式铺开，不再用中心轮播 */
+@media (min-width: 1280px) {
+  .script_area {
+    width: 95%;
+    max-width: 16rem;
+
+    .script_swiper {
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: flex-start;
+      width: 100%;
+      max-width: 15rem;
+      height: auto;
+      margin: 0.2rem 0;
+      padding: 0.2rem;
+      overflow: visible;
+
+      .script_card {
+        position: relative;
+        left: auto;
+        top: auto;
+        flex-shrink: 0;
+        width: 3.4rem;
+        height: 3.8rem;
+        margin: 0.1rem;
+        transform: none !important;
+        opacity: 1 !important;
+        transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        cursor: pointer;
+
+        &:hover {
+          transform: translateY(-0.12rem) !important;
+          box-shadow: 0 0.15rem 0.4rem rgba(0, 83, 117, 0.3);
         }
       }
     }

@@ -5,14 +5,21 @@
       <EchoCard
         v-for="(echo, index) in echosGroup[0]"
         :echo="echo"
-        @show-echo-preview="showEchoPreview(index * 2)"
+        @show-echo-preview="showEchoPreview(index * 3)"
+      ></EchoCard>
+    </div>
+    <div class="echo_center">
+      <EchoCard
+        v-for="(echo, index) in echosGroup[1]"
+        :echo="echo"
+        @show-echo-preview="showEchoPreview(index * 3 + 1)"
       ></EchoCard>
     </div>
     <div class="echo_right">
       <EchoCard
-        v-for="(echo, index) in echosGroup[1]"
+        v-for="(echo, index) in echosGroup[2]"
         :echo="echo"
-        @show-echo-preview="showEchoPreview(index * 2 + 1)"
+        @show-echo-preview="showEchoPreview(index * 3 + 2)"
       ></EchoCard>
     </div>
     <EchoPreview
@@ -31,11 +38,11 @@ defineOptions({
   name: 'echo',
 })
 
-const echosGroup: any = [[], []]
+const echosGroup: any = [[], [], []]
 import { ref } from 'vue'
 const echoPreview = ref({})
 echos.forEach((echo: any, index: number) => {
-  echosGroup[index % 2].push(echo)
+  echosGroup[index % 3].push(echo)
 })
 const showEchoPreview = (index: number) => {
   echoPreview.value = echos[index]
@@ -48,14 +55,6 @@ const closeEchoPreview = () => {
   const EchoPreview = document.getElementById('EchoPreview')
   EchoPreview?.classList.remove('show')
 }
-import LoadingLayer from '@/components/LoadingLayer.vue'
-import { onMounted } from 'vue'
-onMounted(() => {
-  setTimeout(() => {
-    const loadingLayer = document.getElementById('loadingLayer')
-    loadingLayer?.classList.add('fade')
-  }, 2000)
-})
 </script>
 
 <style lang="less" scoped>
@@ -72,8 +71,28 @@ onMounted(() => {
     width: 45%;
     margin-right: 0.2rem;
   }
+  .echo_center {
+    display: none;
+  }
   .echo_right {
     width: 45%;
+  }
+}
+
+/* 桌面宽屏：改为三列，每列限宽，避免封面被拉得过大 */
+@media (min-width: 1280px) {
+  .echo {
+    gap: 0.3rem;
+    padding: 0.3rem 0.5rem;
+    .echo_left,
+    .echo_center,
+    .echo_right {
+      display: block;
+      flex: 1;
+      width: auto;
+      max-width: 4.6rem;
+      margin-right: 0;
+    }
   }
 }
 </style>

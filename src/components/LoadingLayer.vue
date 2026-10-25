@@ -14,13 +14,14 @@
   justify-content: center;
   position: fixed;
   top: 0;
-  left: calc(min(50vw, 25vh)-50vw);
-  width: 7.5rem;
+  left: 0;
+  width: 100%;
   height: 100vh;
+  height: 100dvh;
   background-color: rgba(0, 83, 117);
   overflow: hidden;
   z-index: 999;
-  transition: all 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
 
   &.fade {
     opacity: 0;
