@@ -55,11 +55,11 @@ onMounted(() => {
     margin: 0.3rem 0;
     .home_text {
       font-size: 0.24rem;
-      color: black;
+      color: var(--text-on-surface);
       text-align: justify;
       text-indent: 0.4rem;
       .home_link {
-        color: rgba(0, 83, 117, 1);
+        color: var(--brand);
         font-weight: bold;
         text-decoration: underline;
         text-decoration-thickness: 0.01rem;
@@ -72,7 +72,7 @@ onMounted(() => {
     width: 100%;
     margin: 0.3rem 0;
     font-size: 0.3rem;
-    color: rgba(0, 83, 117, 1);
+    color: var(--brand);
     font-weight: bold;
     font-style: italic;
     text-align: center;

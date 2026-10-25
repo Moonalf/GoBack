@@ -34,7 +34,8 @@ const props = defineProps<{
 
   img {
     width: 100%;
-    object-fit: contain;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
   }
   .name_wrap {
     display: flex;
@@ -77,14 +78,14 @@ const props = defineProps<{
       height: 0.1rem;
       margin-left: 0.2rem;
       clip-path: polygon(0 100%, 50% 0, 100% 100%);
-      background-color: white;
+      background-color: var(--surface);
     }
     .producer_word {
       box-sizing: border-box;
       width: 100%;
       margin-top: -1px;
-      color: black;
-      background-color: white;
+      color: var(--text-on-surface);
+      background-color: var(--surface);
       border-radius: 0.1rem;
       font-size: 0.16rem;
       padding: 0.1rem;

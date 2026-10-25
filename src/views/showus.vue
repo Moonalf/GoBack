@@ -160,7 +160,7 @@ const handleScroll = () => {
         width: 0.6rem;
         height: 1rem;
         border-radius: 50%;
-        border: rgba(0, 83, 117, 1) 0.15rem solid;
+        border: 0.15rem solid var(--brand);
       }
     }
 
@@ -181,7 +181,7 @@ const handleScroll = () => {
         width: 0.6rem;
         height: 1rem;
         border-radius: 50%;
-        border: rgba(0, 83, 117, 1) 0.15rem solid;
+        border: 0.15rem solid var(--brand);
       }
     }
 
@@ -192,9 +192,9 @@ const handleScroll = () => {
       align-items: center;
       position: relative;
       width: 100%;
-      background-color: #ffffff80;
+      background-color: var(--surface-glass);
       border-radius: 0.3rem;
-      border: #fff 0.05rem solid;
+      border: 0.05rem solid var(--surface-border);
       z-index: 1;
 
       .year_wrap {
@@ -207,9 +207,9 @@ const handleScroll = () => {
           top: -0.25rem;
           left: 50%;
           padding: 0 0.2rem;
-          background-color: white;
+          background-color: var(--surface);
           font-size: 0.3rem;
-          color: rgba(0, 83, 117, 1);
+          color: var(--brand);
           border-radius: 0.2rem;
           text-align: center;
           font-style: italic;
@@ -228,7 +228,7 @@ const handleScroll = () => {
         height: 3.6rem;
         margin-top: 0.2rem;
         margin-bottom: 0.5rem;
-        background: linear-gradient(135deg, rgba(0, 83, 117, 1), wheat);
+        background: linear-gradient(135deg, var(--accent-start), var(--accent-end));
         overflow-y: hidden;
         overflow-x: auto;
         overscroll-behavior-x: contain;

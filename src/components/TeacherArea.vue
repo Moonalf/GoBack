@@ -42,7 +42,7 @@ const selectTeacher = (index: number) => {
   box-sizing: border-box;
   width: 95%;
   padding: 0.2rem;
-  background: linear-gradient(135deg, rgba(0, 83, 117, 1), wheat);
+  background: linear-gradient(135deg, var(--accent-start), var(--accent-end));
   border-radius: 0.2rem;
 
   .teacher_title {
@@ -71,7 +71,7 @@ const selectTeacher = (index: number) => {
       width: 1.2rem;
       height: 1.6rem;
       border-radius: 0.15rem;
-      border: gray 0.03rem solid;
+      border: 0.03rem solid var(--surface-border);
       overflow: hidden;
       transition: all 0.2s ease-in-out;
 
@@ -83,7 +83,7 @@ const selectTeacher = (index: number) => {
     }
 
     &.selected .avatar_wrap {
-      border: rgba(0, 83, 117, 1) 0.05rem solid;
+      border: 0.05rem solid var(--brand);
       transform: scale(1.05);
     }
   }
@@ -97,7 +97,7 @@ const selectTeacher = (index: number) => {
     min-height: 2.8rem;
     margin-top: 0.2rem;
     padding-top: 0.15rem;
-    border-top: rgba(0, 0, 0, 0.15) 0.01rem solid;
+    border-top: 0.01rem solid var(--surface-border);
 
     .teacher_name {
       font-size: 0.28rem;
@@ -131,7 +131,7 @@ const selectTeacher = (index: number) => {
     .teacher_item {
       gap: 0.4rem;
       padding: 0.15rem 0;
-      border-bottom: rgba(0, 0, 0, 0.1) 0.01rem solid;
+      border-bottom: 0.01rem solid var(--surface-border);
 
       &:last-child {
         border-bottom: none;

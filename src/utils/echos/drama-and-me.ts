@@ -12,7 +12,7 @@ export default {
     {
       type: 'text',
       text: '一、看山就是山',
-      style: 'color: #c000c0; font-weight: bold; font-size: 0.28rem;',
+      style: 'color: #005375; font-weight: bold; font-size: 0.28rem;',
     },
     {
       type: 'text',
@@ -25,7 +25,7 @@ export default {
     {
       type: 'text',
       text: '二、看山不是山',
-      style: 'color: #c000c0; font-weight: bold; font-size: 0.28rem;',
+      style: 'color: #005375; font-weight: bold; font-size: 0.28rem;',
     },
     {
       type: 'text',
@@ -42,7 +42,7 @@ export default {
     {
       type: 'text',
       text: '三、看山还是山',
-      style: 'color: #c000c0; font-weight: bold; font-size: 0.28rem;',
+      style: 'color: #005375; font-weight: bold; font-size: 0.28rem;',
     },
     {
       type: 'text',
@@ -67,7 +67,7 @@ export default {
     {
       type: 'text',
       text: '尾声',
-      style: 'color: #c000c0; font-weight: bold; font-size: 0.28rem;',
+      style: 'color: #005375; font-weight: bold; font-size: 0.28rem;',
     },
     {
       type: 'text',

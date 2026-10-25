@@ -240,7 +240,9 @@ const linkVideo = (url: string) => {
     }
     .link {
       color: wheat;
+      font-weight: bold;
       text-decoration: underline;
+      text-underline-offset: 0.04rem;
     }
   }
 
@@ -446,6 +448,65 @@ const linkVideo = (url: string) => {
   }
   &_7 {
     transform: rotate(1deg);
+  }
+}
+
+/* 浅色主题：弹层改为明亮阅读底色，文字反色，关闭按钮用品牌色 */
+[data-theme='light'] .show_preview {
+  background: linear-gradient(180deg, #f7f9fb, #eef2f6);
+  color: var(--text-on-surface);
+
+  .close_wrap {
+    background-color: var(--brand);
+    .close_btn {
+      color: var(--text-on-brand);
+    }
+  }
+
+  .intro_bg .shadow {
+    background: radial-gradient(
+      ellipse closest-side at center,
+      rgba(255, 255, 255, 0),
+      #f7f9fb
+    );
+  }
+
+  .show_title,
+  .show_intro {
+    color: var(--text-on-surface);
+  }
+
+  .sub_title {
+    background: linear-gradient(
+      90deg,
+      rgba(0, 83, 117, 0.18) 0,
+      rgba(0, 83, 117, 0) 60%
+    );
+    color: var(--brand);
+  }
+
+  .show_video {
+    color: var(--text-on-surface);
+    .play_icon {
+      border-color: var(--brand);
+      div {
+        background-color: var(--brand);
+      }
+    }
+    .link {
+      color: var(--brand);
+      font-weight: bold;
+      text-decoration: underline;
+      text-underline-offset: 0.04rem;
+    }
+  }
+
+  .cast_area .cast_group_name .name {
+    color: var(--text-on-surface);
+    border-top-color: var(--surface-border);
+  }
+  .cast_area .cast_group_name .circle_icon {
+    border-color: var(--brand);
   }
 }
 </style>

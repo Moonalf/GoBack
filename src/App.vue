@@ -79,37 +79,34 @@ html {
     height: 100dvh;
     margin: 0;
     padding: 0;
-    background-color: #000;
-    #app {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      width: 7.5rem;
-      height: 100vh;
-      height: 100dvh;
-      margin: 0;
-      padding: 0;
-      background-color: wheat;
-
-      .container {
+    background-color: var(--bg-page);
+      #app {
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
+        flex-direction: row;
+        justify-content: center;
         width: 7.5rem;
         height: 100vh;
         height: 100dvh;
-        margin: 0 auto;
-        background: linear-gradient(
-          135deg,
-          rgba(0, 83, 117, 0) 0%,
-          rgba(0, 83, 117, 0.2) 20%,
-          rgba(0, 83, 117, 0.4) 40%,
-          rgba(0, 83, 117, 0.6) 60%,
-          rgba(0, 83, 117, 0.8) 80%,
-          rgba(0, 83, 117, 1) 100%
-        );
-      }
+        margin: 0;
+        padding: 0;
+        background-color: var(--bg-app);
+
+        .container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: flex-start;
+          width: 7.5rem;
+          height: 100vh;
+          height: 100dvh;
+          margin: 0 auto;
+          color: var(--text-on-surface);
+          background: linear-gradient(
+            135deg,
+            var(--gradient-start) 0%,
+            var(--gradient-end) 100%
+          );
+        }
     }
   }
 }
@@ -118,15 +115,11 @@ html {
 @media (min-width: 1280px) {
   html body {
     width: 100%;
-    background-color: wheat;
+    background-color: var(--bg-app);
     background-image: linear-gradient(
       135deg,
-      rgba(0, 83, 117, 0) 0%,
-      rgba(0, 83, 117, 0.2) 20%,
-      rgba(0, 83, 117, 0.4) 40%,
-      rgba(0, 83, 117, 0.6) 60%,
-      rgba(0, 83, 117, 0.8) 80%,
-      rgba(0, 83, 117, 1) 100%
+      var(--gradient-start) 0%,
+      var(--gradient-end) 100%
     );
   }
   html body #app {

@@ -62,7 +62,7 @@ export default {
     {
       type: 'text',
       text: '一、选本和取材',
-      style: 'color: #c000c0; font-weight: bold; font-size: 0.28rem;',
+      style: 'color: #005375; font-weight: bold; font-size: 0.28rem;',
     },
     {
       type: 'text',
@@ -83,7 +83,7 @@ export default {
     {
       type: 'text',
       text: '二、编剧',
-      style: 'color: #c000c0; font-weight: bold; font-size: 0.28rem;',
+      style: 'color: #005375; font-weight: bold; font-size: 0.28rem;',
     },
     {
       type: 'text',
@@ -151,7 +151,7 @@ export default {
     {
       type: 'text',
       text: '三、选角',
-      style: 'color: #c000c0; font-weight: bold; font-size: 0.28rem;',
+      style: 'color: #005375; font-weight: bold; font-size: 0.28rem;',
     },
     {
       type: 'text',
@@ -172,7 +172,7 @@ export default {
     {
       type: 'text',
       text: '四、创排',
-      style: 'color: #c000c0; font-weight: bold; font-size: 0.28rem;',
+      style: 'color: #005375; font-weight: bold; font-size: 0.28rem;',
     },
     {
       type: 'text',
@@ -261,7 +261,7 @@ export default {
     {
       type: 'text',
       text: '五、展演',
-      style: 'color: #c000c0; font-weight: bold; font-size: 0.28rem;',
+      style: 'color: #005375; font-weight: bold; font-size: 0.28rem;',
     },
     {
       type: 'text',
@@ -307,7 +307,7 @@ export default {
     {
       type: 'text',
       text: '六、复盘',
-      style: 'color: #c000c0; font-weight: bold; font-size: 0.28rem;',
+      style: 'color: #005375; font-weight: bold; font-size: 0.28rem;',
     },
     {
       type: 'text',
@@ -338,7 +338,7 @@ export default {
     {
       type: 'text',
       text: '七、下一部',
-      style: 'color: #c000c0; font-weight: bold; font-size: 0.28rem;',
+      style: 'color: #005375; font-weight: bold; font-size: 0.28rem;',
     },
     {
       type: 'text',

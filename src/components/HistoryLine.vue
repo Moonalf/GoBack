@@ -27,7 +27,7 @@ const prefix = import.meta.env.BASE_URL
   flex-direction: column;
   align-items: center;
   width: 100%;
-  color: black;
+  color: var(--text-on-surface);
 
   .history_event {
     display: flex;
@@ -53,7 +53,7 @@ const prefix = import.meta.env.BASE_URL
       width: 0.2rem;
       height: 0.2rem;
       margin: 0;
-      background-color: rgba(0, 83, 117, 1);
+      background-color: var(--brand);
       border-radius: 50%;
       flex-shrink: 0;
     }

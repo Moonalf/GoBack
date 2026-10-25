@@ -86,7 +86,7 @@ watch(
   width: 100%;
   height: calc(0.8rem + env(safe-area-inset-bottom));
   padding-bottom: env(safe-area-inset-bottom);
-  background-color: rgba(240, 255, 255, 1);
+  background-color: var(--surface-glass);
   overflow: hidden;
 
   .nav_item {
@@ -97,7 +97,7 @@ watch(
     justify-content: center;
     width: 100%;
     height: 100%;
-    color: rgba(0, 83, 117, 1);
+    color: var(--brand);
     font-size: 0.3rem;
     font-weight: bold;
     cursor: pointer;
@@ -114,8 +114,8 @@ watch(
       }
     }
     &.selected {
-      background-color: rgba(0, 83, 117, 1);
-      color: rgba(240, 255, 255, 1);
+      background-color: var(--brand);
+      color: var(--text-on-brand);
       transform: scale(1.04);
       font-weight: 900;
     }
@@ -131,10 +131,10 @@ watch(
     margin: 0.15rem auto 0.3rem;
     padding: 0.1rem;
     gap: 0.08rem;
-    background-color: rgba(255, 255, 255, 0.7);
-    border: 0.03rem solid rgba(255, 255, 255, 0.85);
+    background-color: var(--surface-glass);
+    border: 0.03rem solid var(--surface-border);
     border-radius: 999px;
-    box-shadow: 0 0.08rem 0.3rem rgba(0, 83, 117, 0.22);
+    box-shadow: 0 0.08rem 0.3rem var(--shadow);
     backdrop-filter: blur(10px);
 
     .nav_item {

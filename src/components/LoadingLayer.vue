@@ -18,7 +18,7 @@
   width: 100%;
   height: 100vh;
   height: 100dvh;
-  background-color: rgba(0, 83, 117);
+  background-color: var(--brand);
   overflow: hidden;
   z-index: 999;
   transition: opacity 1s ease-in-out;
@@ -32,7 +32,7 @@
     position: relative;
     font-size: 3vh;
     font-weight: 900;
-    color: white;
+    color: var(--text-on-brand);
     font-style: italic;
     text-shadow: 0.5vh -0.5vh 0.5vh rgba(0, 0, 0, 1);
   }

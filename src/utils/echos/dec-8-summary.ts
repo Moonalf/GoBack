@@ -12,7 +12,7 @@ export default {
     {
       type: 'text',
       text: '12 月 8 日之后',
-      style: 'color: #c000c0; font-weight: bold; font-size: 0.28rem;',
+      style: 'color: #005375; font-weight: bold; font-size: 0.28rem;',
     },
     {
       type: 'text',
@@ -33,7 +33,7 @@ export default {
     {
       type: 'text',
       text: '从 2019 年开始',
-      style: 'color: #c000c0; font-weight: bold; font-size: 0.28rem;',
+      style: 'color: #005375; font-weight: bold; font-size: 0.28rem;',
     },
     {
       type: 'text',
@@ -134,7 +134,7 @@ export default {
     {
       type: 'text',
       text: '这一次的节目',
-      style: 'color: #c000c0; font-weight: bold; font-size: 0.28rem;',
+      style: 'color: #005375; font-weight: bold; font-size: 0.28rem;',
     },
     {
       type: 'text',

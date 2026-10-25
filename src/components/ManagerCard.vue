@@ -97,8 +97,8 @@ const props = defineProps<{
     .manager_word {
       box-sizing: border-box;
       width: 100%;
-      color: #fff;
-      background-color: #00000080;
+      color: var(--text-on-surface);
+      background-color: var(--surface);
       border-radius: 0.1rem;
       font-size: 0.16rem;
       padding: 0.1rem;
@@ -110,7 +110,7 @@ const props = defineProps<{
       margin-top: -1px;
       margin-left: 0.2rem;
       clip-path: polygon(0 0, 50% 100%, 100% 0);
-      background-color: #00000080;
+      background-color: var(--surface);
     }
   }
 }

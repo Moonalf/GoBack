@@ -70,13 +70,14 @@ const onImgLoad = (e: Event) => {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: stretch;
   position: fixed;
   top: 0;
-  width: 7.5rem;
+  left: 0;
+  width: 100%;
   height: 100vh;
   height: 100dvh;
-  padding: 0.25rem;
+  padding: 0.3rem;
   padding-bottom: 1.6rem;
   background: linear-gradient(180deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.9));
   opacity: 0;
@@ -178,6 +179,7 @@ const onImgLoad = (e: Event) => {
     .link_content {
       width: 100%;
       margin-bottom: 0.2rem;
+      font-size: 0.22rem;
       a {
         color: #c0c0c0;
         text-decoration: underline;
@@ -188,7 +190,7 @@ const onImgLoad = (e: Event) => {
     width: 100%;
     font-size: 0.2rem;
     font-weight: bold;
-    color: rgba(0, 83, 117, 1);
+    color: var(--brand);
   }
   .echo_modified {
     width: 100%;
@@ -201,7 +203,8 @@ const onImgLoad = (e: Event) => {
 /* 桌面宽屏：弹层铺满加宽后的页面，文章内容限宽避免一行过长 */
 @media (min-width: 1280px) {
   .echo_preview {
-    width: 20rem;
+    width: 16rem;
+    left: calc(50% - 8rem);
 
     /* 封面图也限宽居中 */
     > img {
@@ -210,11 +213,18 @@ const onImgLoad = (e: Event) => {
       margin: 0 auto;
     }
 
+    /* 标题、作者、标签、时间与正文统一限宽居中，左边缘对齐 */
+    .echo_info,
+    .echo_title,
+    .echo_tag,
+    .echo_modified,
     .echo_content {
       max-width: 11rem;
       margin-left: auto;
       margin-right: auto;
+    }
 
+    .echo_content {
       .image_content {
         img {
           width: auto;
@@ -222,6 +232,52 @@ const onImgLoad = (e: Event) => {
         }
       }
     }
+  }
+}
+
+/* 浅色主题：文章弹层改为明亮阅读底色，文字反色，关闭按钮用品牌色 */
+[data-theme='light'] .echo_preview {
+  background: linear-gradient(180deg, #f7f9fb, #eef2f6);
+  color: var(--text-on-surface);
+
+  .close_wrap {
+    background-color: var(--brand);
+    .close_btn {
+      color: var(--text-on-brand);
+    }
+  }
+
+  .echo_title {
+    border-bottom-color: var(--surface-border);
+  }
+
+  .echo_content .image_content .caption {
+    color: var(--text-muted);
+  }
+
+  .echo_content .link_content a {
+    color: var(--brand);
+  }
+
+  .echo_modified {
+    color: var(--text-muted);
+  }
+
+  /* 文章内联彩色文字在浅色底上反色为可读写的深色调 */
+  .echo_content .text_content[style*='color: yellow'] {
+    color: #c89b3c !important;
+  }
+  .echo_content .text_content[style*='color: skyblue'] {
+    color: #2a7bb5 !important;
+  }
+  .echo_content .text_content[style*='color: #4f4'] {
+    color: #2e8b57 !important;
+  }
+  .echo_content .text_content[style*='color: #c0c0c0'] {
+    color: var(--text-muted) !important;
+  }
+  .echo_content .text_content[style*='color: pink'] {
+    color: #c2185b !important;
   }
 }
 </style>

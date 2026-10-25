@@ -199,7 +199,7 @@ const getPrevYearScripts = () => {
   width: 95%;
   margin: 0.3rem 0;
   padding: 0.2rem;
-  background: linear-gradient(135deg, rgba(0, 83, 117, 1), wheat);
+  background: linear-gradient(135deg, var(--accent-start), var(--accent-end));
   border-radius: 0.2rem;
   overflow: hidden;
 
@@ -233,14 +233,14 @@ const getPrevYearScripts = () => {
       .prev_year_btn {
         width: 0.4rem;
         height: 0.3rem;
-        background: #fff;
+        background: var(--text-on-gradient);
         clip-path: polygon(0 50%, 50% 0, 50% 30%, 100% 30%, 100% 70%, 50% 70%, 50% 100%);
       }
     }
 
     .year_text {
       margin: 0 0.1rem;
-      color: #fff;
+      color: var(--text-on-gradient);
       font-size: 0.24rem;
       font-style: italic;
     }
@@ -261,7 +261,7 @@ const getPrevYearScripts = () => {
       .next_year_btn {
         width: 0.4rem;
         height: 0.3rem;
-        background: #fff;
+        background: var(--text-on-gradient);
         clip-path: polygon(100% 50%, 50% 0, 50% 30%, 0 30%, 0 70%, 50% 70%, 50% 100%);
       }
     }
@@ -335,7 +335,7 @@ const getPrevYearScripts = () => {
           margin-left: 0.2rem;
           font-size: 0.36rem;
           font-weight: 900;
-          color: rgba(0, 83, 117, 1);
+          color: var(--brand);
           text-shadow: 0.02rem 0.02rem 0.02rem rgba(255, 255, 255, 0.8);
         }
 
@@ -343,7 +343,7 @@ const getPrevYearScripts = () => {
           width: 100%;
           margin-left: 0.2rem;
           margin-bottom: 0.1rem;
-          color: #666;
+          color: var(--text-muted);
           font-size: 0.18rem;
           white-space: nowrap;
           overflow: hidden;
@@ -371,8 +371,8 @@ const getPrevYearScripts = () => {
             border: brown 0.01rem solid;
 
             &.duration {
-              color: rgba(0, 83, 117, 1);
-              border: rgba(0, 83, 117, 1) 0.01rem solid;
+              color: var(--brand);
+              border: 0.01rem solid var(--brand);
             }
           }
         }

@@ -29,7 +29,7 @@ const showEchoPreview = () => {
   width: 100%;
   margin: 0.2rem 0;
   border-radius: 0.2rem;
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: var(--surface-glass);
   overflow: hidden;
   cursor: pointer;
   transition: transform 0.2s ease-in-out;
@@ -43,7 +43,7 @@ const showEchoPreview = () => {
   }
   .echo_title {
     width: 100%;
-    color: black;
+    color: var(--text-on-surface);
     font-size: 0.24rem;
     font-weight: bold;
     text-indent: 0.1rem;
@@ -60,7 +60,7 @@ const showEchoPreview = () => {
     padding-left: 0.1rem;
     padding-right: 0.1rem;
     padding-bottom: 0.1rem;
-    color: #666;
+    color: var(--text-muted);
     font-size: 0.2rem;
     gap: 0.1rem;
     & > div:not(.echo_modified) {
@@ -80,7 +80,7 @@ const showEchoPreview = () => {
     .echo_modified {
       flex-shrink: 0;
       margin-left: auto;
-      color: #8a8a8a;
+      color: var(--text-muted);
     }
   }
 }

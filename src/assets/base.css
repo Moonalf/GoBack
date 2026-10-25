@@ -5,6 +5,50 @@
   margin: 0;
 }
 
+/* 浅色主题（默认） */
+:root {
+  color-scheme: light;
+  --bg-page: #eaf2f5;           /* 最外层 body 底色（桌面两侧空白） */
+  --bg-app: #fbf7f0;            /* #app 容器底（极浅暖米） */
+  --gradient-start: #eaf6fa;    /* 页面渐变起点（顶部） */
+  --gradient-end: #cfe0e8;      /* 页面渐变终点（底部） */
+  --surface: #ffffff;           /* 卡片面 */
+  --surface-glass: rgba(255, 255, 255, 0.85); /* 半透明卡片 */
+  --surface-border: rgba(0, 83, 117, 0.15);   /* 卡片描边 */
+  --text-on-gradient: #005375;  /* 渐变区域上的文字（品牌蓝） */
+  --text-on-surface: #111111;   /* 卡片上的主文字（黑色） */
+  --text-muted: #5a7080;        /* 次要文字 */
+  --brand: #005375;             /* 品牌蓝（链接/选中/年份）—— 两套主题不变 */
+  --text-on-brand: #ffffff;     /* 品牌色背景上的文字 */
+  --brand-light: rgba(0, 83, 117, 0.1);
+  --accent-start: #cfe4ec;      /* show_card_list 渐变起点 */
+  --accent-end: #f5e8cc;        /* show_card_list 渐变终点（浅麦色） */
+  --overlay-bg: rgba(0, 0, 0, 0.92); /* 弹层背景（两套主题共用深色聚焦层） */
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* 深色主题 */
+[data-theme='dark'] {
+  color-scheme: dark;
+  --bg-page: #000000;
+  --bg-app: #f5deb3;            /* wheat */
+  --gradient-start: rgba(0, 83, 117, 0);  /* 透明，露出 wheat */
+  --gradient-end: rgba(0, 83, 117, 1);
+  --surface: rgba(255, 255, 255, 0.3);
+  --surface-glass: rgba(255, 255, 255, 0.3);
+  --surface-border: rgba(255, 255, 255, 0.5);
+  --text-on-gradient: #ffffff;
+  --text-on-surface: #111111;
+  --text-muted: #666666;
+  --brand: #005375;
+  --text-on-brand: #ffffff;
+  --brand-light: rgba(0, 83, 117, 0.1);
+  --accent-start: rgba(0, 83, 117, 1);
+  --accent-end: #f5deb3;
+  --overlay-bg: rgba(0, 0, 0, 0.92);
+  --shadow: rgba(0, 0, 0, 0.3);
+}
+
 body {
   min-height: 100vh;
   line-height: 1.6;

@@ -1,25 +1,13 @@
 <template>
   <div class="echo">
-    <!-- <LoadingLayer id="loadingLayer"></LoadingLayer> -->
-    <div class="echo_left">
+    <div
+      class="echo_card_wrap"
+      v-for="(echo, index) in echos"
+      :key="index"
+    >
       <EchoCard
-        v-for="(echo, index) in echosGroup[0]"
         :echo="echo"
-        @show-echo-preview="showEchoPreview(index * 3)"
-      ></EchoCard>
-    </div>
-    <div class="echo_center">
-      <EchoCard
-        v-for="(echo, index) in echosGroup[1]"
-        :echo="echo"
-        @show-echo-preview="showEchoPreview(index * 3 + 1)"
-      ></EchoCard>
-    </div>
-    <div class="echo_right">
-      <EchoCard
-        v-for="(echo, index) in echosGroup[2]"
-        :echo="echo"
-        @show-echo-preview="showEchoPreview(index * 3 + 2)"
+        @show-echo-preview="showEchoPreview(index)"
       ></EchoCard>
     </div>
     <EchoPreview
@@ -38,12 +26,8 @@ defineOptions({
   name: 'echo',
 })
 
-const echosGroup: any = [[], [], []]
 import { ref } from 'vue'
 const echoPreview = ref({})
-echos.forEach((echo: any, index: number) => {
-  echosGroup[index % 3].push(echo)
-})
 const showEchoPreview = (index: number) => {
   echoPreview.value = echos[index]
   setTimeout(() => {
@@ -62,36 +46,28 @@ const closeEchoPreview = () => {
   flex: 1;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   align-items: flex-start;
   justify-content: center;
+  gap: 0.2rem;
   width: 100%;
+  padding: 0.2rem;
   overflow-y: auto;
   overflow-x: hidden;
-  .echo_left {
-    width: 45%;
-    margin-right: 0.2rem;
-  }
-  .echo_center {
-    display: none;
-  }
-  .echo_right {
-    width: 45%;
+
+  .echo_card_wrap {
+    width: calc(50% - 0.1rem);
   }
 }
 
-/* 桌面宽屏：改为三列，每列限宽，避免封面被拉得过大 */
+/* 桌面宽屏：三列 */
 @media (min-width: 1280px) {
   .echo {
     gap: 0.3rem;
     padding: 0.3rem 0.5rem;
-    .echo_left,
-    .echo_center,
-    .echo_right {
-      display: block;
-      flex: 1;
-      width: auto;
+    .echo_card_wrap {
+      width: calc(33.333% - 0.2rem);
       max-width: 4.6rem;
-      margin-right: 0;
     }
   }
 }
