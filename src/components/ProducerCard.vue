@@ -93,4 +93,20 @@ const props = defineProps<{
     }
   }
 }
+
+/* 浅色主题：遮罩改用品牌色渐变，避免白底页面上的黑色块 */
+[data-theme='light'] .producer_card {
+  .name_wrap {
+    background: linear-gradient(180deg, rgba(0, 83, 117, 0) 50%, rgba(0, 83, 117, 0.85) 100%);
+
+    .producer_character {
+      color: var(--text-on-brand);
+      border-bottom-color: var(--text-on-brand);
+    }
+
+    .producer_name {
+      color: var(--text-on-brand);
+    }
+  }
+}
 </style>

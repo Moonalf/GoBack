@@ -16,14 +16,32 @@
     >
       {{ content }}
     </div>
-    <div
+    <a
       class="show_video"
       v-for="(video, index) in show?.videos ?? []"
       :key="'video-' + index"
-      @click="linkVideo(video.url)"
+      :href="video.url"
+      target="_blank"
+      rel="noopener noreferrer"
     >
       <div class="play_icon"><div></div></div>
       <div class="link">{{ video?.caption ?? '' }}</div>
+    </a>
+    <div class="article_wrap" v-if="show?.articles?.length">
+      <div class="sub_title">相关推文</div>
+      <a
+        class="show_video article"
+        v-for="(article, index) in show?.articles ?? []"
+        :key="'article-' + index"
+        :href="article.url"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <div class="badge" :class="article.kind === '预告' ? 'pre' : 'post'">
+          {{ article.kind ?? '回顾' }}
+        </div>
+        <div class="link">{{ article.title }}</div>
+      </a>
     </div>
     <div class="sub_title">制作团队</div>
     <div class="producer_group" v-for="(group, idx) in producerGroup" :key="'pdgroup-' + idx">
@@ -110,9 +128,6 @@ const closeShowPreview = () => {
   } else {
     router.replace('/')
   }
-}
-const linkVideo = (url: string) => {
-  window.location.href = url
 }
 </script>
 
@@ -218,16 +233,35 @@ const linkVideo = (url: string) => {
     color: wheat;
   }
 
+  .article_wrap {
+    width: 100%;
+  }
+
   .show_video {
     display: flex;
     flex-direction: row;
     align-items: center;
+    gap: 0.12rem;
     width: 100%;
-    padding-left: 0.4rem;
+    padding: 0.08rem 0.4rem;
+    margin-bottom: 0.04rem;
     font-size: 0.24rem;
     color: wheat;
+    text-decoration: none;
     cursor: pointer;
+    border-radius: 0.1rem;
+    transition:
+      background-color 0.2s ease,
+      transform 0.2s ease;
+    &:hover {
+      background-color: rgba(245, 222, 179, 0.12);
+      transform: translateX(0.04rem);
+    }
+    &:active {
+      transform: translateX(0.04rem) scale(0.99);
+    }
     .play_icon {
+      flex-shrink: 0;
       width: 0.3rem;
       height: 0.3rem;
       border: wheat 0.01rem solid;
@@ -243,6 +277,25 @@ const linkVideo = (url: string) => {
       font-weight: bold;
       text-decoration: underline;
       text-underline-offset: 0.04rem;
+      &::after {
+        content: '↗';
+        margin-left: 0.06rem;
+        font-size: 0.2rem;
+        opacity: 0.55;
+      }
+    }
+    .badge {
+      flex-shrink: 0;
+      padding: 0 0.1rem;
+      font-size: 0.18rem;
+      line-height: 0.3rem;
+      border-radius: 0.15rem;
+      border: 0.01rem solid currentColor;
+      opacity: 0.9;
+      &.post {
+        border-style: dashed;
+        opacity: 0.6;
+      }
     }
   }
 
@@ -487,6 +540,9 @@ const linkVideo = (url: string) => {
 
   .show_video {
     color: var(--text-on-surface);
+    &:hover {
+      background-color: rgba(0, 83, 117, 0.08);
+    }
     .play_icon {
       border-color: var(--brand);
       div {

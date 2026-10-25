@@ -100,4 +100,19 @@ const props = defineProps<{
     }
   }
 }
+
+/* 浅色主题：角色卡片竖排文字改为白色，与深色遮罩保持一致 */
+[data-theme='light'] .cast_card {
+  .name_wrap {
+    border-right-color: #fff;
+
+    .cast_info {
+      color: #fff;
+
+      span {
+        color: #fff;
+      }
+    }
+  }
+}
 </style>

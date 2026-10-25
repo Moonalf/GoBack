@@ -1577,7 +1577,20 @@ const showus = [
           'shows/gb2021/008.webp',
           'shows/gb2021/009.webp',
         ],
-        videos: [],
+        videos: [
+          {
+            url: 'https://www.bilibili.com/video/BV1BN4y1h7Jw/',
+            caption: '9102',
+          },
+          {
+            url: 'https://www.bilibili.com/video/BV1jC4y1Q7yH/',
+            caption: '酒后',
+          },
+          {
+            url: 'https://www.bilibili.com/video/BV1P64y157Mp/',
+            caption: '金漆雕木大神龛',
+          },
+        ],
       },
     ],
   },
@@ -1914,6 +1927,13 @@ const showus = [
           'shows/ssslzr2/007.webp',
         ],
         videos: [],
+        articles: [
+          {
+            title: '踏雨欢歌！学生艺术团举办迎新生专场演出',
+            url: 'https://www.hitsz.edu.cn/news/2022/1114/c6a10209/page.htm',
+            kind: '回顾',
+          },
+        ],
       },
       {
         title: '告白之夜2023·春',
@@ -2555,7 +2575,12 @@ const showus = [
           'shows/gb20232/019.webp',
           'shows/gb20232/020.webp',
         ],
-        videos: [],
+        videos: [
+          {
+            url: 'https://www.bilibili.com/video/BV1sa4y1B7PH/',
+            caption: '花生瓜子',
+          },
+        ],
       },
       {
         title: '你好，疯子',
@@ -3210,11 +3235,35 @@ const showus = [
         videos: [
           {
             url: 'https://www.bilibili.com/video/BV1EE421F7ix/',
-            caption: '演出第一晚合集',
+            caption: '一出不好戏',
+          },
+          {
+            url: 'https://www.bilibili.com/video/BV1Nt421T7bK/',
+            caption: '赵氏孤儿',
+          },
+          {
+            url: 'https://www.bilibili.com/video/BV1ny411e7rx/',
+            caption: '警察和我',
+          },
+          {
+            url: 'https://www.bilibili.com/video/BV1BH4y1u7bs/',
+            caption: '打开打不开的窗',
           },
           {
             url: 'https://www.bilibili.com/video/BV1ND421V7Df/',
-            caption: '演出第二晚合集',
+            caption: '军师恋盟',
+          },
+          {
+            url: 'https://www.bilibili.com/video/BV1y1421i7wq/',
+            caption: '鸣凤之死',
+          },
+          {
+            url: 'https://www.bilibili.com/video/BV1Zt421K76u/',
+            caption: '减肥帮往事',
+          },
+          {
+            url: 'https://www.bilibili.com/video/BV1dz421Y72w/',
+            caption: '小小世界的不速之客',
           },
         ],
       },
@@ -3975,8 +4024,20 @@ const showus = [
         ],
         videos: [
           {
-            url: 'https://www.bilibili.com/video/BV1fhgkztEyT',
-            caption: '告白之夜2025·春-合集',
+            url: 'https://www.bilibili.com/video/BV1fhgkztEyT/',
+            caption: '披星戴月的想你',
+          },
+          {
+            url: 'https://www.bilibili.com/video/BV1ivgkzREoo/',
+            caption: '电子烟灰',
+          },
+          {
+            url: 'https://www.bilibili.com/video/BV1qegkzxESJ/',
+            caption: '民国往事',
+          },
+          {
+            url: 'https://www.bilibili.com/video/BV18SgkzLEJ3/',
+            caption: '恋爱的犀牛',
           },
         ],
       },
@@ -4331,7 +4392,24 @@ const showus = [
           'shows/gb2025yx/601.webp',
           'shows/gb2025yx/602.webp',
         ],
-        videos: [],
+        videos: [
+          {
+            url: 'https://www.bilibili.com/video/BV1fhgkztEyT/',
+            caption: '披星戴月的想你（复排自2025·春）',
+          },
+          {
+            url: 'https://www.bilibili.com/video/BV1ivgkzREoo/',
+            caption: '电子烟灰（复排自2025·春）',
+          },
+          {
+            url: 'https://www.bilibili.com/video/BV1qegkzxESJ/',
+            caption: '民国往事（复排自2025·春）',
+          },
+          {
+            url: 'https://www.bilibili.com/video/BV18SgkzLEJ3/',
+            caption: '恋爱的犀牛（复排自2025·春）',
+          },
+        ],
       },
       {
         title: '告白之夜2025·秋',
@@ -4719,7 +4797,16 @@ const showus = [
           'shows/gb20252/501.webp',
           'shows/gb20252/502.webp',
         ],
-        videos: [],
+        videos: [
+          {
+            url: 'https://www.bilibili.com/video/BV1DuqVB5EV3/',
+            caption: '爱情神话',
+          },
+          {
+            url: 'https://www.bilibili.com/video/BV1pwqGBcESK/',
+            caption: '蚌与珍珠',
+          },
+        ],
       },
       {
         title: '油漆未干',
@@ -4874,7 +4961,16 @@ const showus = [
           'shows/yqwg/016.webp',
           'shows/yqwg/017.webp',
         ],
-        videos: [],
+        videos: [
+          {
+            url: 'https://www.bilibili.com/video/BV1ZQqYBjEAS/',
+            caption: '2025·秋 剧场专场',
+          },
+          {
+            url: 'https://www.bilibili.com/video/BV18yqaBAENu/',
+            caption: '2025·秋 街道演出专场',
+          },
+        ],
       },
       {
         title: '告白之夜2026·春',
@@ -5108,7 +5204,24 @@ const showus = [
           'shows/gb2026/507.webp',
           'shows/gb2026/600.webp',
         ],
-        videos: [],
+        videos: [
+          {
+            url: 'https://www.bilibili.com/video/BV1V3Tx6jE7Q/',
+            caption: '伤心侦探',
+          },
+          {
+            url: 'https://www.bilibili.com/video/BV1k3Ts64ETS/',
+            caption: '爱要怎么说出口',
+          },
+          {
+            url: 'https://www.bilibili.com/video/BV1KGMA63Ev2/',
+            caption: '肖像',
+          },
+          {
+            url: 'https://www.bilibili.com/video/BV1r5Ts6xEr6/',
+            caption: '小品的世界',
+          },
+        ],
       },
     ],
   },
