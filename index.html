@@ -1,10 +1,28 @@
 <!doctype html>
-<html lang="">
+<html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" href="/GoBack/common/goback_icon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#005375" />
+    <meta name="color-scheme" content="light dark" />
+    <meta
+      name="description"
+      content="哈尔滨工业大学（深圳）学生艺术团话剧部（告白话剧社）演出与成员记录。In a moment we go back."
+    />
     <title>In a moment we go back.</title>
+    <script>
+      // 在 CSS 渲染前确定主题，避免白屏闪烁
+      ;(function () {
+        try {
+          var stored = localStorage.getItem('theme')
+          var prefersDark =
+            window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+          var theme = stored || (prefersDark ? 'dark' : 'light')
+          document.documentElement.setAttribute('data-theme', theme)
+        } catch (e) {}
+      })()
+    </script>
     <script type="text/javascript" charset="UTF-8">
       ;(function () {
         function setRem() {
@@ -42,8 +60,8 @@
         } catch (e) {}
       })()
     </script>
-    <script type="module" crossorigin src="/GoBack/assets/index-DXRyplxn.js"></script>
-    <link rel="stylesheet" crossorigin href="/GoBack/assets/index-BbllDIb3.css">
+    <script type="module" crossorigin src="/GoBack/assets/index-DL13HL6x.js"></script>
+    <link rel="stylesheet" crossorigin href="/GoBack/assets/index-CrJOnqa_.css">
   </head>
   <body>
     <div id="app"></div>
