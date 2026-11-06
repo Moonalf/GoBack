@@ -25,19 +25,6 @@
     </script>
     <script type="text/javascript" charset="UTF-8">
       ;(function () {
-        function setRem() {
-          const html = document.documentElement
-          let width = html.clientWidth
-          if (width > 450) width = 450 // 最大宽度限制
-          html.style.fontSize = (width / 375) * 50 + 'px'
-        }
-        setRem()
-        window.addEventListener('resize', setRem)
-        window.addEventListener('pageshow', function (e) {
-          if (e && e.persisted) {
-            setRem()
-          }
-        })
         try {
           if (typeof WeixinJSBridge == 'object' && typeof WeixinJSBridge.invoke == 'function') {
             handleFontSize()
@@ -60,8 +47,8 @@
         } catch (e) {}
       })()
     </script>
-    <script type="module" crossorigin src="/GoBack/assets/index-DL13HL6x.js"></script>
-    <link rel="stylesheet" crossorigin href="/GoBack/assets/index-CrJOnqa_.css">
+    <script type="module" crossorigin src="/GoBack/assets/index-cVIdc6WF.js"></script>
+    <link rel="stylesheet" crossorigin href="/GoBack/assets/index-C6jRN6jq.css">
   </head>
   <body>
     <div id="app"></div>
