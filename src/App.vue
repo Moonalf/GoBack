@@ -69,69 +69,7 @@ onUnmounted(() => {
 </script>
 
 <style lang="less">
-html {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  body {
-    width: 7.5rem;
-    height: 100vh;
-    height: 100dvh;
-    margin: 0;
-    padding: 0;
-    background-color: var(--bg-page);
-      #app {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        width: 7.5rem;
-        height: 100vh;
-        height: 100dvh;
-        margin: 0;
-        padding: 0;
-        background-color: var(--bg-app);
-
-        .container {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: flex-start;
-          width: 7.5rem;
-          height: 100vh;
-          height: 100dvh;
-          margin: 0 auto;
-          color: var(--text-on-surface);
-          background: linear-gradient(
-            135deg,
-            var(--gradient-start) 0%,
-            var(--gradient-end) 100%
-          );
-        }
-    }
-  }
-}
-
-/* 桌面宽屏：渐变底色铺满整个视口，内容区加宽到 20rem（约 1200px）居中 */
-@media (min-width: 1280px) {
-  html body {
-    width: 100%;
-    background-color: var(--bg-app);
-    background-image: linear-gradient(
-      135deg,
-      var(--gradient-start) 0%,
-      var(--gradient-end) 100%
-    );
-  }
-  html body #app {
-    width: 20rem;
-    margin: 0 auto;
-    background-color: transparent;
-  }
-  html body #app .container {
-    width: 20rem;
-    background: transparent;
-  }
-}
+/* 布局样式见 src/styles/layout/portrait.less 与 wide.less */
 
 /* 原生滚动条完全隐藏，不占宽度 */
 * {

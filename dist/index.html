@@ -1,25 +1,30 @@
 <!doctype html>
-<html lang="">
+<html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" href="/GoBack/common/goback_icon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#005375" />
+    <meta name="color-scheme" content="light dark" />
+    <meta
+      name="description"
+      content="哈尔滨工业大学（深圳）学生艺术团话剧部（告白话剧社）演出与成员记录。In a moment we go back."
+    />
     <title>In a moment we go back.</title>
+    <script>
+      // 在 CSS 渲染前确定主题，避免白屏闪烁
+      ;(function () {
+        try {
+          var stored = localStorage.getItem('theme')
+          var prefersDark =
+            window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+          var theme = stored || (prefersDark ? 'dark' : 'light')
+          document.documentElement.setAttribute('data-theme', theme)
+        } catch (e) {}
+      })()
+    </script>
     <script type="text/javascript" charset="UTF-8">
       ;(function () {
-        function setRem() {
-          const html = document.documentElement
-          let width = html.clientWidth
-          if (width > 450) width = 450 // 最大宽度限制
-          html.style.fontSize = (width / 375) * 50 + 'px'
-        }
-        setRem()
-        window.addEventListener('resize', setRem)
-        window.addEventListener('pageshow', function (e) {
-          if (e && e.persisted) {
-            setRem()
-          }
-        })
         try {
           if (typeof WeixinJSBridge == 'object' && typeof WeixinJSBridge.invoke == 'function') {
             handleFontSize()
@@ -42,8 +47,8 @@
         } catch (e) {}
       })()
     </script>
-    <script type="module" crossorigin src="/GoBack/assets/index-DUO6roSA.js"></script>
-    <link rel="stylesheet" crossorigin href="/GoBack/assets/index-Dt9CVTV5.css">
+    <script type="module" crossorigin src="/GoBack/assets/index-DD4sPs6L.js"></script>
+    <link rel="stylesheet" crossorigin href="/GoBack/assets/index-ButuGfmi.css">
   </head>
   <body>
     <div id="app"></div>

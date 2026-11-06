@@ -25,19 +25,6 @@
     </script>
     <script type="text/javascript" charset="UTF-8">
       ;(function () {
-        function setRem() {
-          const html = document.documentElement
-          let width = html.clientWidth
-          if (width > 450) width = 450 // 最大宽度限制
-          html.style.fontSize = (width / 375) * 50 + 'px'
-        }
-        setRem()
-        window.addEventListener('resize', setRem)
-        window.addEventListener('pageshow', function (e) {
-          if (e && e.persisted) {
-            setRem()
-          }
-        })
         try {
           if (typeof WeixinJSBridge == 'object' && typeof WeixinJSBridge.invoke == 'function') {
             handleFontSize()
